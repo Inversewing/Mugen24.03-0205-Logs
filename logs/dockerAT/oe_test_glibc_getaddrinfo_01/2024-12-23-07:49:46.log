@@ -1,0 +1,3090 @@
++ source /home/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+Python 3.11.6
+++ source /home/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Mon Dec 23 07:49:49 2024 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'bind-utils traceroute mtr wget'
++ pkgs='bind-utils traceroute mtr wget'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /home/mugen/libs/locallibs/rpm_manage.py install --pkgs 'bind-utils traceroute mtr wget' --node 1 --tempfile ''
+Mon Dec 23 07:49:57 2024 - INFO  - pkgs:(bind-utils traceroute mtr wget) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Mon Dec 23 07:49:57 2024 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon Dec 23 07:49:58 2024 - INFO  - Start to run test.
++ flag=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:49:58--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 31.7M=0s
+
+2024-12-23 07:49:58 (31.7 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:49:58--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 32.5M=0s
+
+2024-12-23 07:49:58 (32.5 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:49:58--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 30.0M=0s
+
+2024-12-23 07:49:58 (30.0 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:49:58--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 28.7M=0s
+
+2024-12-23 07:49:58 (28.7 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:49:59--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 29.2M=0s
+
+2024-12-23 07:49:59 (29.2 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:49:59--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 31.2M=0s
+
+2024-12-23 07:49:59 (31.2 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:49:59--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 30.4M=0s
+
+2024-12-23 07:49:59 (30.4 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:49:59--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 33.0M=0s
+
+2024-12-23 07:49:59 (33.0 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:49:59--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 30.5M=0s
+
+2024-12-23 07:49:59 (30.5 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:49:59--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 27.0M=0s
+
+2024-12-23 07:49:59 (27.0 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:49:59--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 35.4M=0s
+
+2024-12-23 07:50:00 (35.4 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:00--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 25.2M=0s
+
+2024-12-23 07:50:00 (25.2 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:00--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 21.5M=0s
+
+2024-12-23 07:50:00 (21.5 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:00--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 21.3M=0s
+
+2024-12-23 07:50:00 (21.3 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:00--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 26.5M=0s
+
+2024-12-23 07:50:00 (26.5 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:00--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 26.0M=0s
+
+2024-12-23 07:50:00 (26.0 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:00--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 31.8M=0s
+
+2024-12-23 07:50:00 (31.8 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:01--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 25.7M=0s
+
+2024-12-23 07:50:01 (25.7 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:01--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 25.7M=0s
+
+2024-12-23 07:50:01 (25.7 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:01--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 25.4M=0s
+
+2024-12-23 07:50:01 (25.4 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:01--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 30.0M=0s
+
+2024-12-23 07:50:01 (30.0 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:01--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 29.4M=0s
+
+2024-12-23 07:50:01 (29.4 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:01--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 17.7M=0s
+
+2024-12-23 07:50:01 (17.7 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:01--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 35.9M=0s
+
+2024-12-23 07:50:02 (35.9 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:02--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 38.6M=0s
+
+2024-12-23 07:50:02 (38.6 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:02--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 21.9M=0s
+
+2024-12-23 07:50:02 (21.9 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:02--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 32.1M=0s
+
+2024-12-23 07:50:02 (32.1 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:02--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 36.5M=0s
+
+2024-12-23 07:50:02 (36.5 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:02--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 25.5M=0s
+
+2024-12-23 07:50:02 (25.5 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:02--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 25.7M=0s
+
+2024-12-23 07:50:02 (25.7 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:03--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 25.5M=0s
+
+2024-12-23 07:50:03 (25.5 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:03--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 39.1M=0s
+
+2024-12-23 07:50:03 (39.1 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:03--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 30.2M=0s
+
+2024-12-23 07:50:03 (30.2 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:03--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 27.9M=0s
+
+2024-12-23 07:50:03 (27.9 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:03--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 33.4M=0s
+
+2024-12-23 07:50:03 (33.4 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:03--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 38.2M=0s
+
+2024-12-23 07:50:03 (38.2 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:03--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 30.6M=0s
+
+2024-12-23 07:50:04 (30.6 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:04--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 21.9M=0s
+
+2024-12-23 07:50:04 (21.9 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:04--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 36.6M=0s
+
+2024-12-23 07:50:04 (36.6 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:04--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 20.7M=0s
+
+2024-12-23 07:50:04 (20.7 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:04--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 35.9M=0s
+
+2024-12-23 07:50:04 (35.9 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:04--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 27.2M=0s
+
+2024-12-23 07:50:04 (27.2 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:04--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 24.8M=0s
+
+2024-12-23 07:50:04 (24.8 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:05--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 37.2M=0s
+
+2024-12-23 07:50:05 (37.2 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:05--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 15.7M=0s
+
+2024-12-23 07:50:05 (15.7 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:05--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 19.3M=0s
+
+2024-12-23 07:50:05 (19.3 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:05--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 23.8M=0s
+
+2024-12-23 07:50:05 (23.8 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:05--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 29.3M=0s
+
+2024-12-23 07:50:05 (29.3 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:05--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 34.2M=0s
+
+2024-12-23 07:50:05 (34.2 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:05--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 31.5M=0s
+
+2024-12-23 07:50:06 (31.5 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:06--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 24.1M=0s
+
+2024-12-23 07:50:06 (24.1 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:06--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 23.3M=0s
+
+2024-12-23 07:50:06 (23.3 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:06--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 19.2M=0s
+
+2024-12-23 07:50:06 (19.2 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:06--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 28.2M=0s
+
+2024-12-23 07:50:06 (28.2 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:06--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 30.8M=0s
+
+2024-12-23 07:50:06 (30.8 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:06--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 31.2M=0s
+
+2024-12-23 07:50:06 (31.2 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:07--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 20.8M=0s
+
+2024-12-23 07:50:07 (20.8 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:07--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 27.4M=0s
+
+2024-12-23 07:50:07 (27.4 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:07--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 33.3M=0s
+
+2024-12-23 07:50:07 (33.3 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:07--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 32.2M=0s
+
+2024-12-23 07:50:07 (32.2 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:07--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 32.0M=0s
+
+2024-12-23 07:50:07 (32.0 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:07--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 27.7M=0s
+
+2024-12-23 07:50:07 (27.7 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:07--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 26.2M=0s
+
+2024-12-23 07:50:08 (26.2 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:08--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 21.6M=0s
+
+2024-12-23 07:50:08 (21.6 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:08--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 30.9M=0s
+
+2024-12-23 07:50:08 (30.9 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:08--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 28.5M=0s
+
+2024-12-23 07:50:08 (28.5 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:08--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 5.77M=0s
+
+2024-12-23 07:50:08 (5.77 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:08--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 32.2M=0s
+
+2024-12-23 07:50:08 (32.2 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:08--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 32.3M=0s
+
+2024-12-23 07:50:08 (32.3 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:08--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 30.0M=0s
+
+2024-12-23 07:50:09 (30.0 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:09--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 22.5M=0s
+
+2024-12-23 07:50:09 (22.5 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:09--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 23.6M=0s
+
+2024-12-23 07:50:09 (23.6 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:09--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 32.9M=0s
+
+2024-12-23 07:50:09 (32.9 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:09--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 31.2M=0s
+
+2024-12-23 07:50:09 (31.2 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:09--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 27.8M=0s
+
+2024-12-23 07:50:09 (27.8 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:09--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 33.9M=0s
+
+2024-12-23 07:50:10 (33.9 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:10--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 36.8M=0s
+
+2024-12-23 07:50:10 (36.8 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:10--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 29.3M=0s
+
+2024-12-23 07:50:10 (29.3 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ wget www.baidu.com
+Prepended http:// to 'www.baidu.com'
+--2024-12-23 07:50:10--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 198.18.3.143
+Connecting to www.baidu.com (www.baidu.com)|198.18.3.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2381 (2.3K) [text/html]
+Saving to: ‘index.html’
+
+     0K ..                                                    100% 34.1M=0s
+
+2024-12-23 07:50:10 (34.1 MB/s) - ‘index.html’ saved [2381/2381]
+
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f index.html
++ rm -rf index.html
++ CHECK_RESULT 0 0 0 'Failed to execute wget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute wget' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 80 ))
++ curl www.baidu.com
++ grep baidu
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  2381  100  2381    0     0  42307      0 --:--:-- --:--:-- --:--:-- 44924
+<!--STATUS OK--><html> <head><meta http-equiv=content-type content=text/html;charset=utf-8><meta http-equiv=X-UA-Compatible content=IE=Edge><meta content=always name=referrer><link rel=stylesheet type=text/css href=http://s1.bdstatic.com/r/www/cache/bdorz/baidu.min.css><title>百度一下，你就知道</title></head> <body link=#0000cc> <div id=wrapper> <div id=head> <div class=head_wrapper> <div class=s_form> <div class=s_form_wrapper> <div id=lg> <img hidefocus=true src=//www.baidu.com/img/bd_logo1.png width=270 height=129> </div> <form id=form name=f action=//www.baidu.com/s class=fm> <input type=hidden name=bdorz_come value=1> <input type=hidden name=ie value=utf-8> <input type=hidden name=f value=8> <input type=hidden name=rsv_bp value=1> <input type=hidden name=rsv_idx value=1> <input type=hidden name=tn value=baidu><span class="bg s_ipt_wr"><input id=kw name=wd class=s_ipt value maxlength=255 autocomplete=off autofocus></span><span class="bg s_btn_wr"><input type=submit id=su value=百度一下 class="bg s_btn"></span> </form> </div> </div> <div id=u1> <a href=http://news.baidu.com name=tj_trnews class=mnav>新闻</a> <a href=http://www.hao123.com name=tj_trhao123 class=mnav>hao123</a> <a href=http://map.baidu.com name=tj_trmap class=mnav>地图</a> <a href=http://v.baidu.com name=tj_trvideo class=mnav>视频</a> <a href=http://tieba.baidu.com name=tj_trtieba class=mnav>贴吧</a> <noscript> <a href=http://www.baidu.com/bdorz/login.gif?login&amp;tpl=mn&amp;u=http%3A%2F%2Fwww.baidu.com%2f%3fbdorz_come%3d1 name=tj_login class=lb>登录</a> </noscript> <script>document.write('<a href="http://www.baidu.com/bdorz/login.gif?login&tpl=mn&u='+ encodeURIComponent(window.location.href+ (window.location.search === "" ? "?" : "&")+ "bdorz_come=1")+ '" name="tj_login" class="lb">登录</a>');</script> <a href=//www.baidu.com/more/ name=tj_briicon class=bri style="display: block;">更多产品</a> </div> </div> </div> <div id=ftCon> <div id=ftConw> <p id=lh> <a href=http://home.baidu.com>关于百度</a> <a href=http://ir.baidu.com>About Baidu</a> </p> <p id=cp>&copy;2017&nbsp;Baidu&nbsp;<a href=http://www.baidu.com/duty/>使用百度前必读</a>&nbsp; <a href=http://jianyi.baidu.com/ class=cp-feedback>意见反馈</a>&nbsp;京ICP证030173号&nbsp; <img src=//www.baidu.com/img/gs.gif> </p> </div> </div> </div> </body> </html>
++ CHECK_RESULT 0 0 0 'Failed to execute curl'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute curl'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute curl' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ping -c 3 www.baidu.com
++ grep '0% packet loss'
+3 packets transmitted, 3 received, 0% packet loss, time 2008ms
++ CHECK_RESULT 0 0 0 'Failed to execute ping'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute ping'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute ping' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ host www.baidu.com
++ grep baidu.com
+www.baidu.com has address 198.18.3.143
+www.baidu.com is an alias for www.a.shifen.com.
++ CHECK_RESULT 0 0 0 'Failed to execute host'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute host'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute host' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ nslookup www.baidu.com
++ grep 'canonical name'
++ CHECK_RESULT 1 0 0 'Failed to execute nslookup'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to execute nslookup'
++ exit_mode=0
++ '[' -z '1 0 0 Failed to execute nslookup' ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to execute nslookup'
++ LOG_ERROR 'Failed to execute nslookup'
++ message='Failed to execute nslookup'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to execute nslookup'
+Mon Dec 23 07:50:13 2024 - ERROR - Failed to execute nslookup
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_glibc_getaddrinfo_01.sh line 45'
++ message='oe_test_glibc_getaddrinfo_01.sh line 45'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_glibc_getaddrinfo_01.sh line 45'
+Mon Dec 23 07:50:14 2024 - ERROR - oe_test_glibc_getaddrinfo_01.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ traceroute www.baidu.com
++ grep 'traceroute to'
+traceroute to www.baidu.com (198.18.3.143), 30 hops max, 60 byte packets
++ CHECK_RESULT 0 0 0 'Failed to execute traceroute'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute traceroute'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute traceroute' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ mtr -r www.baidu.com
++ grep Start:
+Start: 2024-12-23T07:50:45+0800
++ CHECK_RESULT 0 0 0 'Failed to execute mtr'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute mtr'
++ exit_mode=0
++ '[' -z '0 0 0 Failed to execute mtr' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon Dec 23 07:51:00 2024 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Mon Dec 23 07:51:01 2024 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon Dec 23 07:51:02 2024 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Mon Dec 23 07:51:02 2024 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon Dec 23 07:51:02 2024 - INFO  - End to restore the test environment.

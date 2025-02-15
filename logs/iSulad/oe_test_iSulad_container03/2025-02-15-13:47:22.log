@@ -1,0 +1,204 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+Python 3.11.6
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sat Feb 15 13:47:28 2025 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL iSulad
++ pkgs=iSulad
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs iSulad --node 1 --tempfile ''
+Sat Feb 15 13:47:36 2025 - INFO  - pkgs:(iSulad) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ cp /etc/isulad/daemon.json /etc/isulad/daemon.json.bak
+cp: cannot stat '/etc/isulad/daemon.json': No such file or directory
++ '[' riscv64 == riscv64 ']'
++ sed -i '/registry-mirrors/a\"https:\/\/docker.io\"' /etc/isulad/daemon.json
+sed: can't read /etc/isulad/daemon.json: No such file or directory
++ systemctl restart isulad.service
+Job for isulad.service failed because the control process exited with error code.
+See "systemctl status isulad.service" and "journalctl -xeu isulad.service" for details.
++ isula pull busybox
+Image "busybox" pulling
+Can not connect with server.Is the iSulad daemon running on the host?
++ isula create -it busybox
+Can not connect with server.Is the iSulad daemon running on the host?
+++ isula ps -a
+++ grep -vi NAMES
+++ awk '{print $NF}'
+Can not connect with server.Is the iSulad daemon running on the host?
++ container_id=
++ isula start ''
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Sat Feb 15 13:47:38 2025 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sat Feb 15 13:47:38 2025 - INFO  - Start to run test.
++ isula inspect -f '{{.State.Status}}' ''
++ grep -i running
+Inspect error: No such object:
++ CHECK_RESULT 1 0 0 'Container startup failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Container startup failed'
++ exit_mode=0
++ '[' -z '1 0 0 Container startup failed' ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Container startup failed'
++ LOG_ERROR 'Container startup failed'
++ message='Container startup failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Container startup failed'
+Sat Feb 15 13:47:39 2025 - ERROR - Container startup failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iSulad_container03.sh line 42'
++ message='oe_test_iSulad_container03.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iSulad_container03.sh line 42'
+Sat Feb 15 13:47:39 2025 - ERROR - oe_test_iSulad_container03.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ isula pause ''
++ isula inspect -f '{{.State.Status}}' ''
++ grep -i paused
+Inspect error: No such object:
++ CHECK_RESULT 1 0 0 'Container paused failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Container paused failed'
++ exit_mode=0
++ '[' -z '1 0 0 Container paused failed' ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Container paused failed'
++ LOG_ERROR 'Container paused failed'
++ message='Container paused failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Container paused failed'
+Sat Feb 15 13:47:40 2025 - ERROR - Container paused failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iSulad_container03.sh line 45'
++ message='oe_test_iSulad_container03.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iSulad_container03.sh line 45'
+Sat Feb 15 13:47:41 2025 - ERROR - oe_test_iSulad_container03.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ isula unpause ''
++ isula inspect -f '{{.State.Status}}' ''
++ grep -i running
+Inspect error: No such object:
++ CHECK_RESULT 1 0 0 'Container startup failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Container startup failed'
++ exit_mode=0
++ '[' -z '1 0 0 Container startup failed' ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Container startup failed'
++ LOG_ERROR 'Container startup failed'
++ message='Container startup failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Container startup failed'
+Sat Feb 15 13:47:42 2025 - ERROR - Container startup failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iSulad_container03.sh line 48'
++ message='oe_test_iSulad_container03.sh line 48'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iSulad_container03.sh line 48'
+Sat Feb 15 13:47:42 2025 - ERROR - oe_test_iSulad_container03.sh line 48
++ '[' 0 -eq 1 ']'
++ return 0
++ isula info
++ grep -i name
+Can not connect with server.Is the iSulad daemon running on the host?
++ CHECK_RESULT 1 0 0 'Query failed '
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Query failed '
++ exit_mode=0
++ '[' -z '1 0 0 Query failed ' ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Query failed '
++ LOG_ERROR 'Query failed '
++ message='Query failed '
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Query failed '
+Sat Feb 15 13:47:43 2025 - ERROR - Query failed 
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iSulad_container03.sh line 50'
++ message='oe_test_iSulad_container03.sh line 50'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iSulad_container03.sh line 50'
+Sat Feb 15 13:47:43 2025 - ERROR - oe_test_iSulad_container03.sh line 50
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Sat Feb 15 13:47:43 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 4
++ test 4 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Sat Feb 15 13:47:44 2025 - ERROR - failed to execute the case.
++ exit 4
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Sat Feb 15 13:47:44 2025 - INFO  - Start to restore the test environment.
++ isula ps -a
++ grep -vi NAMES
++ awk '{print $NF}'
++ xargs -I '{}' isula stop '{}'
+Can not connect with server.Is the iSulad daemon running on the host?
++ isula ps -a
++ grep -vi NAMES
++ awk '{print $NF}'
++ xargs -I '{}' isula rm -f '{}'
+Can not connect with server.Is the iSulad daemon running on the host?
++ isula rmi busybox
+Can not connect with server.Is the iSulad daemon running on the host?
++ mv -f /etc/isulad/daemon.json.bak /etc/isulad/daemon.json
+mv: cannot stat '/etc/isulad/daemon.json.bak': No such file or directory
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Sat Feb 15 13:47:45 2025 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Sat Feb 15 13:47:45 2025 - INFO  - End to restore the test environment.

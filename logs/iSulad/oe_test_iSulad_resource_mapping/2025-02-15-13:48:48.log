@@ -1,0 +1,345 @@
++ source ./common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
+Python 3.11.6
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sat Feb 15 13:48:54 2025 - INFO  - Start to prepare the test environment.
++ iSulad_install
++ DNF_INSTALL iSulad
++ pkgs=iSulad
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs iSulad --node 1 --tempfile ''
+Sat Feb 15 13:49:02 2025 - INFO  - pkgs:(iSulad) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ sed -i '/registry-mirrors/a\"https:\/\/docker.io\"' /etc/isulad/daemon.json
+sed: can't read /etc/isulad/daemon.json: No such file or directory
++ systemctl restart isulad
+Job for isulad.service failed because the control process exited with error code.
+See "systemctl status isulad.service" and "journalctl -xeu isulad.service" for details.
++ '[' riscv64 == riscv64 ']'
++ TEST_IMAGE=jchzhou/oerv
++ TEST_TAG=24.03
+++ hostname
+oe_test_iSulad_resource_mapping.sh: line 35: hostname: command not found
++ localhostname=
++ hostname test
+oe_test_iSulad_resource_mapping.sh: line 36: hostname: command not found
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sat Feb 15 13:49:03 2025 - INFO  - Start to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sat Feb 15 13:49:03 2025 - INFO  - Start to run test.
+++ hostname
+oe_test_iSulad_resource_mapping.sh: line 42: hostname: command not found
++ isula run -itd -h '' --name volume -v vol:/vol:rw,nocopy jchzhou/oerv:24.03
+Invalid container hostname (), only ^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$ and less than 64 bytes are allowed.
++ CHECK_RESULT 125 0 0 'create container failed'
++ actual_result=125
++ expect_result=0
++ mode=0
++ error_log='create container failed'
++ exit_mode=0
++ '[' -z '125 0 0 create container failed' ']'
++ '[' 0 -eq 0 ']'
++ test 125x '!=' 0x
++ test -n 'create container failed'
++ LOG_ERROR 'create container failed'
++ message='create container failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'create container failed'
+Sat Feb 15 13:49:04 2025 - ERROR - create container failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iSulad_resource_mapping.sh line 43'
++ message='oe_test_iSulad_resource_mapping.sh line 43'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iSulad_resource_mapping.sh line 43'
+Sat Feb 15 13:49:04 2025 - ERROR - oe_test_iSulad_resource_mapping.sh line 43
++ '[' 0 -eq 1 ']'
++ return 0
++ expect
+++ hostname
+oe_test_iSulad_resource_mapping.sh: line 44: hostname: command not found
+++ hostname
+oe_test_iSulad_resource_mapping.sh: line 44: hostname: command not found
+++ hostname
+oe_test_iSulad_resource_mapping.sh: line 44: hostname: command not found
+spawn isula exec -it volume /bin/bash
+Can not connect with server.Is the iSulad daemon running on the host?
+expect: spawn id exp4 not open
+    while executing
+"expect {
+            "root@" {
+                send "echo 'hello world' > test\n"
+            }
+        }"
++ grep 'hello world' /var/lib/isulad/volumes/vol/_data/test
+grep: /var/lib/isulad/volumes/vol/_data/test: No such file or directory
++ CHECK_RESULT 2 0 0 'resource mapping failed'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='resource mapping failed'
++ exit_mode=0
++ '[' -z '2 0 0 resource mapping failed' ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n 'resource mapping failed'
++ LOG_ERROR 'resource mapping failed'
++ message='resource mapping failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'resource mapping failed'
+Sat Feb 15 13:49:05 2025 - ERROR - resource mapping failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iSulad_resource_mapping.sh line 64'
++ message='oe_test_iSulad_resource_mapping.sh line 64'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iSulad_resource_mapping.sh line 64'
+Sat Feb 15 13:49:05 2025 - ERROR - oe_test_iSulad_resource_mapping.sh line 64
++ '[' 0 -eq 1 ']'
++ return 0
+++ hostname
+oe_test_iSulad_resource_mapping.sh: line 65: hostname: command not found
++ isula run -itd -h '' --name volume1 --mount type=volume,src=vol1,dst=/vol1,volume-nocopy=true jchzhou/oerv:24.03
+Invalid container hostname (), only ^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$ and less than 64 bytes are allowed.
++ CHECK_RESULT 125 0 0 'create container failed'
++ actual_result=125
++ expect_result=0
++ mode=0
++ error_log='create container failed'
++ exit_mode=0
++ '[' -z '125 0 0 create container failed' ']'
++ '[' 0 -eq 0 ']'
++ test 125x '!=' 0x
++ test -n 'create container failed'
++ LOG_ERROR 'create container failed'
++ message='create container failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'create container failed'
+Sat Feb 15 13:49:06 2025 - ERROR - create container failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iSulad_resource_mapping.sh line 66'
++ message='oe_test_iSulad_resource_mapping.sh line 66'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iSulad_resource_mapping.sh line 66'
+Sat Feb 15 13:49:06 2025 - ERROR - oe_test_iSulad_resource_mapping.sh line 66
++ '[' 0 -eq 1 ']'
++ return 0
++ expect
+++ hostname
+oe_test_iSulad_resource_mapping.sh: line 67: hostname: command not found
+++ hostname
+oe_test_iSulad_resource_mapping.sh: line 67: hostname: command not found
+++ hostname
+oe_test_iSulad_resource_mapping.sh: line 67: hostname: command not found
+spawn isula exec -it volume1 /bin/bash
+Can not connect with server.Is the iSulad daemon running on the host?
+expect: spawn id exp4 not open
+    while executing
+"expect {
+            "root@" {
+                send "echo 'hello world' > test\n"
+            }
+        }"
++ grep 'hello world' /var/lib/isulad/volumes/vol1/_data/test
+grep: /var/lib/isulad/volumes/vol1/_data/test: No such file or directory
++ CHECK_RESULT 2 0 0 'resource mapping failed'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='resource mapping failed'
++ exit_mode=0
++ '[' -z '2 0 0 resource mapping failed' ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n 'resource mapping failed'
++ LOG_ERROR 'resource mapping failed'
++ message='resource mapping failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'resource mapping failed'
+Sat Feb 15 13:49:07 2025 - ERROR - resource mapping failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iSulad_resource_mapping.sh line 87'
++ message='oe_test_iSulad_resource_mapping.sh line 87'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iSulad_resource_mapping.sh line 87'
+Sat Feb 15 13:49:07 2025 - ERROR - oe_test_iSulad_resource_mapping.sh line 87
++ '[' 0 -eq 1 ']'
++ return 0
+++ hostname
+oe_test_iSulad_resource_mapping.sh: line 88: hostname: command not found
++ isula run -itd -h '' --name volume2 --volumes-from volume --volumes-from volume1 jchzhou/oerv:24.03
+Invalid container hostname (), only ^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$ and less than 64 bytes are allowed.
++ CHECK_RESULT 125 0 0 'create container failed'
++ actual_result=125
++ expect_result=0
++ mode=0
++ error_log='create container failed'
++ exit_mode=0
++ '[' -z '125 0 0 create container failed' ']'
++ '[' 0 -eq 0 ']'
++ test 125x '!=' 0x
++ test -n 'create container failed'
++ LOG_ERROR 'create container failed'
++ message='create container failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'create container failed'
+Sat Feb 15 13:49:08 2025 - ERROR - create container failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iSulad_resource_mapping.sh line 89'
++ message='oe_test_iSulad_resource_mapping.sh line 89'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iSulad_resource_mapping.sh line 89'
+Sat Feb 15 13:49:08 2025 - ERROR - oe_test_iSulad_resource_mapping.sh line 89
++ '[' 0 -eq 1 ']'
++ return 0
++ expect
+++ hostname
+oe_test_iSulad_resource_mapping.sh: line 90: hostname: command not found
+++ hostname
+oe_test_iSulad_resource_mapping.sh: line 90: hostname: command not found
+++ hostname
+oe_test_iSulad_resource_mapping.sh: line 90: hostname: command not found
+spawn isula exec -it volume2 /bin/bash
+Can not connect with server.Is the iSulad daemon running on the host?
+expect: spawn id exp5 not open
+    while executing
+"expect {
+            "root@" {
+                send "grep 'hello world' /vol1/test\n"
+            }
+        }"
+++ grep -c 'hello world' /tmp/log_volume
++ test 1 -eq 4
++ CHECK_RESULT 1 0 0 'resource mapping failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='resource mapping failed'
++ exit_mode=0
++ '[' -z '1 0 0 resource mapping failed' ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'resource mapping failed'
++ LOG_ERROR 'resource mapping failed'
++ message='resource mapping failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'resource mapping failed'
+Sat Feb 15 13:49:09 2025 - ERROR - resource mapping failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iSulad_resource_mapping.sh line 111'
++ message='oe_test_iSulad_resource_mapping.sh line 111'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iSulad_resource_mapping.sh line 111'
+Sat Feb 15 13:49:09 2025 - ERROR - oe_test_iSulad_resource_mapping.sh line 111
++ '[' 0 -eq 1 ']'
++ return 0
++ isula stop volume volume1 volume2
+Can not connect with server.Is the iSulad daemon running on the host?
+Can not connect with server.Is the iSulad daemon running on the host?
+Can not connect with server.Is the iSulad daemon running on the host?
+Can not connect with server.Is the iSulad daemon running on the host?
+Can not connect with server.Is the iSulad daemon running on the host?
+Can not connect with server.Is the iSulad daemon running on the host?
++ isula rm volume volume1 volume2
+Can not connect with server.Is the iSulad daemon running on the host?
+Can not connect with server.Is the iSulad daemon running on the host?
+Can not connect with server.Is the iSulad daemon running on the host?
++ grep 'hello world' /var/lib/isulad/volumes/vol/_data/test
+grep: /var/lib/isulad/volumes/vol/_data/test: No such file or directory
++ CHECK_RESULT 2 0 0 'resource mapping failed'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='resource mapping failed'
++ exit_mode=0
++ '[' -z '2 0 0 resource mapping failed' ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n 'resource mapping failed'
++ LOG_ERROR 'resource mapping failed'
++ message='resource mapping failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'resource mapping failed'
+Sat Feb 15 13:49:10 2025 - ERROR - resource mapping failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iSulad_resource_mapping.sh line 115'
++ message='oe_test_iSulad_resource_mapping.sh line 115'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iSulad_resource_mapping.sh line 115'
+Sat Feb 15 13:49:11 2025 - ERROR - oe_test_iSulad_resource_mapping.sh line 115
++ '[' 0 -eq 1 ']'
++ return 0
++ grep 'hello world' /var/lib/isulad/volumes/vol1/_data/test
+grep: /var/lib/isulad/volumes/vol1/_data/test: No such file or directory
++ CHECK_RESULT 2 0 0 'resource mapping failed'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='resource mapping failed'
++ exit_mode=0
++ '[' -z '2 0 0 resource mapping failed' ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n 'resource mapping failed'
++ LOG_ERROR 'resource mapping failed'
++ message='resource mapping failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'resource mapping failed'
+Sat Feb 15 13:49:11 2025 - ERROR - resource mapping failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iSulad_resource_mapping.sh line 117'
++ message='oe_test_iSulad_resource_mapping.sh line 117'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iSulad_resource_mapping.sh line 117'
+Sat Feb 15 13:49:11 2025 - ERROR - oe_test_iSulad_resource_mapping.sh line 117
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Sat Feb 15 13:49:12 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 8
++ test 8 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Sat Feb 15 13:49:12 2025 - ERROR - failed to execute the case.
++ exit 8
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Sat Feb 15 13:49:12 2025 - INFO  - Start to restore the test environment.
++ hostname ''
+oe_test_iSulad_resource_mapping.sh: line 123: hostname: command not found
++ isula rmi jchzhou/oerv:24.03
+Can not connect with server.Is the iSulad daemon running on the host?
++ iSulad_remove
++ systemctl stop isulad
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Sat Feb 15 13:49:13 2025 - WARN  - no thing to do.
++ return 0
++ rm -rf /etc/isulad
++ rm -rf /tmp/log_volume
++ LOG_INFO 'End to restore the test environment'
++ message='End to restore the test environment'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment'
+Sat Feb 15 13:49:14 2025 - INFO  - End to restore the test environment

@@ -1,0 +1,29 @@
+Python 3.11.6
+Sun Feb 16 02:05:00 2025 - INFO  - Start to config params of the case.
+Sun Feb 16 02:05:00 2025 - INFO  - End to config params of the case.
+Sun Feb 16 02:05:01 2025 - INFO  - Start environment preparation.
+Sun Feb 16 02:05:21 2025 - INFO  - End of environmental preparation!
+Sun Feb 16 02:05:21 2025 - INFO  - Start testing...
+oe_test_criu.sh: line 37: gcc: command not found
+oe_test_criu.sh: line 38: ./demo: No such file or directory
+oe_test_criu.sh: line 42: criu: command not found
+Sun Feb 16 02:05:26 2025 - ERROR - oe_test_criu.sh line 43
+tail: cannot open 'output.txt' for reading: No such file or directory
+oe_test_criu.sh: line 47: criu: command not found
+Sun Feb 16 02:05:27 2025 - ERROR - oe_test_criu.sh line 48
+grep: output.txt: No such file or directory
+Sun Feb 16 02:05:27 2025 - ERROR - oe_test_criu.sh line 51
+grep: output.txt: No such file or directory
+Sun Feb 16 02:05:28 2025 - ERROR - oe_test_criu.sh line 53
+Sun Feb 16 02:05:28 2025 - INFO  - Finish test!
+Sun Feb 16 02:05:28 2025 - ERROR - failed to execute the case.
+Sun Feb 16 02:05:29 2025 - INFO  - start environment cleanup.
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 192, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 163, in rpm_remove
+    with open(tmpfile, "r") as f:
+         ^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'Last metadata expiration check: 0:51:11 ago on Sun 16 Feb 2025 01:14:09 AM CST.\nNo match for argument: criu\nError: Unable to find a match: criu'
+Sun Feb 16 02:05:31 2025 - INFO  - Finish environment cleanup!

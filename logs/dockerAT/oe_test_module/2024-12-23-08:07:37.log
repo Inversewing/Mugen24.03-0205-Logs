@@ -1,0 +1,32 @@
++ source /home/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+Python 3.11.6
+++ source /home/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Mon Dec 23 08:07:40 2024 - INFO  - Start to prepare the test environment.
++ df -h /
++ grep overlay
+overlay          38G  6.4G   29G  18% /
++ LOG_INFO 'The current environment is Docker.'
++ message='The current environment is Docker.'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level info --message 'The current environment is Docker.'
+Mon Dec 23 08:07:41 2024 - INFO  - The current environment is Docker.
++ exit 255
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_module.sh post_test'
++ message='oe_test_module.sh post_test'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_module.sh post_test'
+Mon Dec 23 08:07:42 2024 - INFO  - oe_test_module.sh post_test

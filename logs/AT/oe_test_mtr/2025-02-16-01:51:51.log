@@ -1,0 +1,14 @@
+Python 3.11.6
+Sun Feb 16 01:51:53 2025 - INFO  - Start to prepare the test environment.
+Sun Feb 16 01:52:21 2025 - INFO  - End to prepare the test environment.
+Sun Feb 16 01:52:21 2025 - INFO  - Start testing...
+mtr 0.95
+Usage:
+Sun Feb 16 01:52:37 2025 - ERROR - mtr -r dns fail
+Sun Feb 16 01:52:37 2025 - ERROR - oe_test_mtr.sh line 37
+HOST: localhost.localdomain       Loss%   Snt   Last   Avg  Best  Wrst StDev
+HOST: localhost.localdomain       Loss%   Snt   Last   Avg  Best  Wrst StDev
+Sun Feb 16 01:53:08 2025 - INFO  - Finish test!
+Sun Feb 16 01:53:09 2025 - ERROR - failed to execute the case.
+Sun Feb 16 01:53:09 2025 - INFO  - Start to restore the test environment.
+Sun Feb 16 01:53:16 2025 - INFO  - End to restore the test environment.

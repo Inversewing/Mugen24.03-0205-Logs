@@ -1,0 +1,37 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+Python 3.11.6
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Sat Feb 15 14:38:38 2025 - INFO  - Start testing...
+++ uname -r
++ kernel_name=6.6.0-72.0.0.76.oe2403sp1.riscv64
++ cd /usr/lib/modules/6.6.0-72.0.0.76.oe2403sp1.riscv64/kernel/drivers/base/regmap
+oe_test_regmap_01.sh: line 25: cd: /usr/lib/modules/6.6.0-72.0.0.76.oe2403sp1.riscv64/kernel/drivers/base/regmap: No such file or directory
++ exit
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Sat Feb 15 14:38:39 2025 - INFO  - start environment cleanup.
++ rmmod regmap-i2c
+rmmod: ERROR: Module regmap_i2c is builtin.
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Sat Feb 15 14:38:39 2025 - INFO  - Finish environment cleanup!

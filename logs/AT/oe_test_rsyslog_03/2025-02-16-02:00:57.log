@@ -1,0 +1,13 @@
+Python 3.11.6
+Sun Feb 16 02:01:00 2025 - INFO  - Start to prepare the test environment.
+cp: cannot stat '/var/log/journal/*/system.journal': No such file or directory
+Sun Feb 16 02:01:29 2025 - INFO  - End to prepare the test environment.
+Sun Feb 16 02:01:30 2025 - INFO  - Start to run test.
+Sun Feb 16 02:01:31 2025 - ERROR - Failed to find system.journal
+Sun Feb 16 02:01:31 2025 - ERROR - oe_test_rsyslog_03.sh line 46
+s=b06a32709f4a44d5b293da57eb78be9d;i=94f;b=eadf2fd2930e4c189f994dffda067807;m=26a21cf6e;t=62e3214b5c2dc;x=467caddc56284c61
+Sun Feb 16 02:01:32 2025 - INFO  - End to run test.
+Sun Feb 16 02:01:32 2025 - ERROR - failed to execute the case.
+Sun Feb 16 02:01:32 2025 - INFO  - Start to restore the test environment.
+mv: cannot stat '/var/log/journal/*/system.journal.bak': No such file or directory
+Sun Feb 16 02:01:42 2025 - INFO  - End to restore the test environment.

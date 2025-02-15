@@ -1,0 +1,175 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+Python 3.11.6
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Sat Feb 15 14:46:48 2025 - INFO  - Start environmental preparation.
+++ awk -F '[' '{print $2}'
+++ awk -F ']' '{print $1}'
+oe_test_io_sched.sh: line 24: /sys/block/sda/queue/scheduler: No such file or directory
++ default=
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Sat Feb 15 14:46:49 2025 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Sat Feb 15 14:46:49 2025 - INFO  - Start testing...
++ test_name=(none mq-deadline bfq kyber)
++ for i in "${test_name[@]}"
++ echo none
+oe_test_io_sched.sh: line 33: /sys/block/sda/queue/scheduler: No such file or directory
+++ grep none /sys/block/sda/queue/scheduler
+++ awk -F '[' '{print $2}'
+++ awk -F ']' '{print $1}'
+grep: /sys/block/sda/queue/scheduler: No such file or directory
++ model=
++ CHECK_RESULT '' none 0 'Switching failed'
++ actual_result=
++ expect_result=none
++ mode=0
++ error_log='Switching failed'
++ exit_mode=0
++ '[' -z ' none 0 Switching failed' ']'
++ '[' 0 -eq 0 ']'
++ test x '!=' nonex
++ test -n 'Switching failed'
++ LOG_ERROR 'Switching failed'
++ message='Switching failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Switching failed'
+Sat Feb 15 14:46:49 2025 - ERROR - Switching failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_io_sched.sh line 35'
++ message='oe_test_io_sched.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_io_sched.sh line 35'
+Sat Feb 15 14:46:50 2025 - ERROR - oe_test_io_sched.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ for i in "${test_name[@]}"
++ echo mq-deadline
+oe_test_io_sched.sh: line 33: /sys/block/sda/queue/scheduler: No such file or directory
+++ grep mq-deadline /sys/block/sda/queue/scheduler
+++ awk -F '[' '{print $2}'
+++ awk -F ']' '{print $1}'
+grep: /sys/block/sda/queue/scheduler: No such file or directory
++ model=
++ CHECK_RESULT '' mq-deadline 0 'Switching failed'
++ actual_result=
++ expect_result=mq-deadline
++ mode=0
++ error_log='Switching failed'
++ exit_mode=0
++ '[' -z ' mq-deadline 0 Switching failed' ']'
++ '[' 0 -eq 0 ']'
++ test x '!=' mq-deadlinex
++ test -n 'Switching failed'
++ LOG_ERROR 'Switching failed'
++ message='Switching failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Switching failed'
+Sat Feb 15 14:46:50 2025 - ERROR - Switching failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_io_sched.sh line 35'
++ message='oe_test_io_sched.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_io_sched.sh line 35'
+Sat Feb 15 14:46:50 2025 - ERROR - oe_test_io_sched.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ for i in "${test_name[@]}"
++ echo bfq
+oe_test_io_sched.sh: line 33: /sys/block/sda/queue/scheduler: No such file or directory
+++ grep bfq /sys/block/sda/queue/scheduler
+++ awk -F '[' '{print $2}'
+++ awk -F ']' '{print $1}'
+grep: /sys/block/sda/queue/scheduler: No such file or directory
++ model=
++ CHECK_RESULT '' bfq 0 'Switching failed'
++ actual_result=
++ expect_result=bfq
++ mode=0
++ error_log='Switching failed'
++ exit_mode=0
++ '[' -z ' bfq 0 Switching failed' ']'
++ '[' 0 -eq 0 ']'
++ test x '!=' bfqx
++ test -n 'Switching failed'
++ LOG_ERROR 'Switching failed'
++ message='Switching failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Switching failed'
+Sat Feb 15 14:46:51 2025 - ERROR - Switching failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_io_sched.sh line 35'
++ message='oe_test_io_sched.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_io_sched.sh line 35'
+Sat Feb 15 14:46:51 2025 - ERROR - oe_test_io_sched.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ for i in "${test_name[@]}"
++ echo kyber
+oe_test_io_sched.sh: line 33: /sys/block/sda/queue/scheduler: No such file or directory
+++ grep kyber /sys/block/sda/queue/scheduler
+++ awk -F '[' '{print $2}'
+++ awk -F ']' '{print $1}'
+grep: /sys/block/sda/queue/scheduler: No such file or directory
++ model=
++ CHECK_RESULT '' kyber 0 'Switching failed'
++ actual_result=
++ expect_result=kyber
++ mode=0
++ error_log='Switching failed'
++ exit_mode=0
++ '[' -z ' kyber 0 Switching failed' ']'
++ '[' 0 -eq 0 ']'
++ test x '!=' kyberx
++ test -n 'Switching failed'
++ LOG_ERROR 'Switching failed'
++ message='Switching failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Switching failed'
+Sat Feb 15 14:46:51 2025 - ERROR - Switching failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_io_sched.sh line 35'
++ message='oe_test_io_sched.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_io_sched.sh line 35'
+Sat Feb 15 14:46:52 2025 - ERROR - oe_test_io_sched.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Sat Feb 15 14:46:52 2025 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 4
++ test 4 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Sat Feb 15 14:46:52 2025 - ERROR - failed to execute the case.
++ exit 4
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Sat Feb 15 14:46:53 2025 - INFO  - Start to restore the test environment.
++ echo ''
+oe_test_io_sched.sh: line 42: /sys/block/sda/queue/scheduler: No such file or directory
++ LOG_INFO 'Finish to restore the test environment.'
++ message='Finish to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish to restore the test environment.'
+Sat Feb 15 14:46:53 2025 - INFO  - Finish to restore the test environment.

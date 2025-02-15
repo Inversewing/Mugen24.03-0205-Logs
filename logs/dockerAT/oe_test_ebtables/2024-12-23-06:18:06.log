@@ -1,0 +1,97 @@
++ source /home/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+Python 3.11.6
+++ source /home/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Mon Dec 23 06:18:08 2024 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL ebtables
++ pkgs=ebtables
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /home/mugen/libs/locallibs/rpm_manage.py install --pkgs ebtables --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpf34qr05v
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpf34qr05v
++ touch /run/ebtables.lock
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Mon Dec 23 06:18:39 2024 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon Dec 23 06:18:39 2024 - INFO  - Start to run test.
++ ebtables --concurrent -L
++ grep Bridge
+modprobe: FATAL: Module ebtables not found in directory /lib/modules/6.6.0-72.0.0.76.oe2403sp1.riscv64
+The kernel doesn't support the ebtables 'filter' table.
++ CHECK_RESULT 1 0 0 'Failed to execute ebtables'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to execute ebtables'
++ exit_mode=0
++ '[' -z '1 0 0 Failed to execute ebtables' ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to execute ebtables'
++ LOG_ERROR 'Failed to execute ebtables'
++ message='Failed to execute ebtables'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to execute ebtables'
+Mon Dec 23 06:18:40 2024 - ERROR - Failed to execute ebtables
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ebtables.sh line 32'
++ message='oe_test_ebtables.sh line 32'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ebtables.sh line 32'
+Mon Dec 23 06:18:40 2024 - ERROR - oe_test_ebtables.sh line 32
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon Dec 23 06:18:40 2024 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Mon Dec 23 06:18:41 2024 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon Dec 23 06:18:41 2024 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpf34qr05v ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /home/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpf34qr05v
++ '[' 0 -ne 0 ']'
++ rm -rf /run/ebtables.lock
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon Dec 23 06:18:49 2024 - INFO  - End to restore the test environment.

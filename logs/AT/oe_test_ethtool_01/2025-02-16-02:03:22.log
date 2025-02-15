@@ -1,0 +1,67 @@
+Python 3.11.6
+Sun Feb 16 02:03:24 2025 - INFO  - Start to prepare the test environment.
+Sun Feb 16 02:03:30 2025 - INFO  - pkgs:(ethtool) is already installed
+Sun Feb 16 02:03:30 2025 - INFO  - End to prepare the test environment.
+Sun Feb 16 02:03:31 2025 - INFO  - Start to run test.
+Could not change any device features
+Actual changes:
+tx-scatter-gather: off [requested on]
+tx-scatter-gather-fraglist: off [requested on]
+Could not change any device features
+Actual changes:
+tx-generic-segmentation: off [requested on]
+Sun Feb 16 02:03:31 2025 - ERROR - GSO open failed
+Sun Feb 16 02:03:31 2025 - ERROR - oe_test_ethtool_01.sh line 37
+Sun Feb 16 02:03:32 2025 - ERROR - Check GSO open failed
+Sun Feb 16 02:03:32 2025 - ERROR - oe_test_ethtool_01.sh line 39
+generic-segmentation-offload: off
+generic-receive-offload: on
+generic-receive-offload: off
+Could not change any device features
+Actual changes:
+tx-checksum-ipv4: off [requested on]
+tx-checksum-ip-generic: off [requested on]
+tx-checksum-ipv6: off [requested on]
+tx-checksum-fcoe-crc: off [requested on]
+tx-checksum-sctp: off [requested on]
+Could not change any device features
+Actual changes:
+tx-tcp-segmentation: off [requested on]
+tx-tcp-ecn-segmentation: off [requested on]
+tx-tcp-mangleid-segmentation: off [requested on]
+tx-tcp6-segmentation: off [requested on]
+Sun Feb 16 02:03:33 2025 - ERROR - TSO open failed
+Sun Feb 16 02:03:33 2025 - ERROR - oe_test_ethtool_01.sh line 54
+Sun Feb 16 02:03:33 2025 - ERROR - Check TSO open failed
+Sun Feb 16 02:03:34 2025 - ERROR - oe_test_ethtool_01.sh line 56
+tcp-segmentation-offload: off
+Could not change any device features
+Actual changes:
+tx-checksum-ipv4: off [requested on]
+tx-checksum-ip-generic: off [requested on]
+tx-checksum-ipv6: off [requested on]
+tx-checksum-fcoe-crc: off [requested on]
+tx-checksum-sctp: off [requested on]
+Sun Feb 16 02:03:34 2025 - ERROR - TX open failed
+Sun Feb 16 02:03:34 2025 - ERROR - oe_test_ethtool_01.sh line 62
+Sun Feb 16 02:03:35 2025 - ERROR - Check TX open failed
+Sun Feb 16 02:03:35 2025 - ERROR - oe_test_ethtool_01.sh line 64
+tx-checksumming: off
+Could not change any device features
+Actual changes:
+tx-scatter-gather: off [requested on]
+tx-scatter-gather-fraglist: off [requested on]
+Sun Feb 16 02:03:35 2025 - ERROR - SG open failed
+Sun Feb 16 02:03:35 2025 - ERROR - oe_test_ethtool_01.sh line 70
+Sun Feb 16 02:03:36 2025 - ERROR - Check SG open failed
+Sun Feb 16 02:03:36 2025 - ERROR - oe_test_ethtool_01.sh line 72
+scatter-gather: off
+	tx-scatter-gather: off [fixed]
+Sun Feb 16 02:03:36 2025 - INFO  - End to run test.
+Sun Feb 16 02:03:37 2025 - ERROR - failed to execute the case.
+Sun Feb 16 02:03:37 2025 - INFO  - Start to restore the test environment.
+ethtool (-K): flag 'on]' for parameter '(null)' is not followed by 'on' or 'off'
+ethtool (-K): flag 'off
+[fixed]' for parameter '(null)' is not followed by 'on' or 'off'
+Sun Feb 16 02:03:37 2025 - WARN  - no thing to do.
+Sun Feb 16 02:03:38 2025 - INFO  - End to restore the test environment.

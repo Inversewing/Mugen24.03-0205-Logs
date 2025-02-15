@@ -1,0 +1,245 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+Python 3.11.6
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sat Feb 15 14:12:14 2025 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL kernel-tools
++ pkgs=kernel-tools
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs kernel-tools --node 1 --tempfile ''
+Sat Feb 15 14:12:21 2025 - INFO  - pkgs:(kernel-tools) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Sat Feb 15 14:12:22 2025 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sat Feb 15 14:12:22 2025 - INFO  - Start to run test.
++ cpupower -h
++ grep Usage
++ grep cpupower
+Usage:	cpupower [-d|--debug] [-c|--cpu cpulist ] <command> [<args>]
++ CHECK_RESULT 0 0 0 'check -h usage fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check -h usage fail'
++ exit_mode=0
++ '[' -z '0 0 0 check -h usage fail' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cpupower help
++ grep Usage
++ grep cpupower
+Usage:	cpupower [-d|--debug] [-c|--cpu cpulist ] <command> [<args>]
++ CHECK_RESULT 0 0 0 'check help usage fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check help usage fail'
++ exit_mode=0
++ '[' -z '0 0 0 check help usage fail' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cpupower frequency-info
++ grep 'analyzing CPU '
+analyzing CPU 6:
++ CHECK_RESULT 0 0 0 'check analyzing CPU fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check analyzing CPU fail'
++ exit_mode=0
++ '[' -z '0 0 0 check analyzing CPU fail' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hostnamectl
++ grep Virtualization
++ lshw -c system
++ grep -E 'product.*qemu'
+oe_test_kernel_cmd_01.sh: line 34: lshw: command not found
+++ cpupower frequency-info
+++ grep 'current CPU frequency'
+++ awk -F ': ' '{print $2}'
+++ awk '{print $1}'
++ current_frequency='Unable
+Unable'
++ cpupower frequency-set -f 1.0GHz
+Setting cpu: 0
+Error setting new values. Common errors:
+- Do you have proper administration rights? (super-user?)
+- Is the governor you requested available and modprobed?
+- Trying to set an invalid policy?
+- Trying to set a specific frequency, but userspace governor is not available,
+   for example because of hardware which cannot be set to a specific frequency
+   or because the userspace governor isn't loaded?
++ CHECK_RESULT 237 0 0 'check 1.0GHz fail'
++ actual_result=237
++ expect_result=0
++ mode=0
++ error_log='check 1.0GHz fail'
++ exit_mode=0
++ '[' -z '237 0 0 check 1.0GHz fail' ']'
++ '[' 0 -eq 0 ']'
++ test 237x '!=' 0x
++ test -n 'check 1.0GHz fail'
++ LOG_ERROR 'check 1.0GHz fail'
++ message='check 1.0GHz fail'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'check 1.0GHz fail'
+Sat Feb 15 14:12:24 2025 - ERROR - check 1.0GHz fail
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_kernel_cmd_01.sh line 37'
++ message='oe_test_kernel_cmd_01.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_kernel_cmd_01.sh line 37'
+Sat Feb 15 14:12:24 2025 - ERROR - oe_test_kernel_cmd_01.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ cpupower frequency-info
++ grep 'current CPU frequency'
++ grep Hz
++ CHECK_RESULT 1 0 0 'check current CPU frequency Hz fail'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='check current CPU frequency Hz fail'
++ exit_mode=0
++ '[' -z '1 0 0 check current CPU frequency Hz fail' ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'check current CPU frequency Hz fail'
++ LOG_ERROR 'check current CPU frequency Hz fail'
++ message='check current CPU frequency Hz fail'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'check current CPU frequency Hz fail'
+Sat Feb 15 14:12:25 2025 - ERROR - check current CPU frequency Hz fail
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_kernel_cmd_01.sh line 39'
++ message='oe_test_kernel_cmd_01.sh line 39'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_kernel_cmd_01.sh line 39'
+Sat Feb 15 14:12:25 2025 - ERROR - oe_test_kernel_cmd_01.sh line 39
++ '[' 0 -eq 1 ']'
++ return 0
++ cpupower frequency-set -f 'Unable
+UnableGHz'
+invalid or unknown argument
++ cpupower idle-info
++ grep 'analyzing CPU '
+analyzing CPU 2:
++ CHECK_RESULT 0 0 0 'check analyzing CPU fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check analyzing CPU fail'
++ exit_mode=0
++ '[' -z '0 0 0 check analyzing CPU fail' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cpupower idle-set
++ CHECK_RESULT 0 0 0 'check idle-set fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check idle-set fail'
++ exit_mode=0
++ '[' -z '0 0 0 check idle-set fail' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cpupower info
++ grep 'analyzing CPU '
+analyzing CPU 0:
++ CHECK_RESULT 0 0 0 'check analyzing CPU fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check analyzing CPU fail'
++ exit_mode=0
++ '[' -z '0 0 0 check analyzing CPU fail' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'Usage: gpio-event-mon'
++ gpio-event-mon '-?'
+Usage: gpio-event-mon [options]...
++ CHECK_RESULT 0 0 0 'check Usage: gpio-event-mon fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check Usage: gpio-event-mon fail'
++ exit_mode=0
++ '[' -z '0 0 0 check Usage: gpio-event-mon fail' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ gpio-hammer '-?'
++ grep 'Usage: gpio-hammer'
+Usage: gpio-hammer [options]...
++ CHECK_RESULT 0 0 0 'check Usage: gpio-hammer fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check Usage: gpio-hammer fail'
++ exit_mode=0
++ '[' -z '0 0 0 check Usage: gpio-hammer fail' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Sat Feb 15 14:12:25 2025 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Sat Feb 15 14:12:26 2025 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'Start to restore the tet environment.'
++ message='Start to restore the tet environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the tet environment.'
+Sat Feb 15 14:12:26 2025 - INFO  - Start to restore the tet environment.
++ DNF_REMOVE ''
++ node=
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Sat Feb 15 14:12:26 2025 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'Finish to restore the tet environment.'
++ message='Finish to restore the tet environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish to restore the tet environment.'
+Sat Feb 15 14:12:27 2025 - INFO  - Finish to restore the tet environment.

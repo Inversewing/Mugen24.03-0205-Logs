@@ -1,0 +1,597 @@
++ source /home/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+Python 3.11.6
+++ source /home/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Mon Dec 23 06:09:33 2024 - INFO  - Start testing...
++ journalctl --no-pager
++ CHECK_RESULT 0 0 0 'journalctl --no-pager failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='journalctl --no-pager failed'
++ exit_mode=0
++ '[' -z '0 0 0 journalctl --no-pager failed' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep -E 'LVM|NetworkManager' all_log
++ CHECK_RESULT 1 0 0 'grep LVM|NetworkManager failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='grep LVM|NetworkManager failed'
++ exit_mode=0
++ '[' -z '1 0 0 grep LVM|NetworkManager failed' ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'grep LVM|NetworkManager failed'
++ LOG_ERROR 'grep LVM|NetworkManager failed'
++ message='grep LVM|NetworkManager failed'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level error --message 'grep LVM|NetworkManager failed'
+Mon Dec 23 06:09:33 2024 - ERROR - grep LVM|NetworkManager failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_journalctl.sh line 27'
++ message='oe_test_journalctl.sh line 27'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_journalctl.sh line 27'
+Mon Dec 23 06:09:33 2024 - ERROR - oe_test_journalctl.sh line 27
++ '[' 0 -eq 1 ']'
++ return 0
++ journalctl -k --no-pager
++ CHECK_RESULT 0 0 0 'journalctl -k -no-pager failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='journalctl -k -no-pager failed'
++ exit_mode=0
++ '[' -z '0 0 0 journalctl -k -no-pager failed' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep -iE 'kernel|systemd' kernel_log
+Dec 23 06:00:44 babcac139c94 kernel: Linux version 6.6.0-72.0.0.76.oe2403sp1.riscv64 (abuild@openeuler-riscv64) (gcc_old (GCC) 12.3.1 (openEuler 12.3.1-62.oe2403sp1), GNU ld (GNU Binutils) 2.41) #1 SMP PREEMPT Sun Dec 29 15:11:05 UTC 2024
+Dec 23 06:00:44 babcac139c94 kernel: random: crng init done
+Dec 23 06:00:44 babcac139c94 kernel: Machine model: riscv-virtio,qemu
+Dec 23 06:00:44 babcac139c94 kernel: SBI specification v1.0 detected
+Dec 23 06:00:44 babcac139c94 kernel: SBI implementation ID=0x1 Version=0x10003
+Dec 23 06:00:44 babcac139c94 kernel: SBI TIME extension detected
+Dec 23 06:00:44 babcac139c94 kernel: SBI IPI extension detected
+Dec 23 06:00:44 babcac139c94 kernel: SBI RFENCE extension detected
+Dec 23 06:00:44 babcac139c94 kernel: SBI SRST extension detected
+Dec 23 06:00:44 babcac139c94 kernel: earlycon: ns16550a0 at MMIO 0x0000000010000000 (options '')
+Dec 23 06:00:44 babcac139c94 kernel: printk: bootconsole [ns16550a0] enabled
+Dec 23 06:00:44 babcac139c94 kernel: Disabled 4-level and 5-level paging
+Dec 23 06:00:44 babcac139c94 kernel: efi: EFI v2.7 by EDK II
+Dec 23 06:00:44 babcac139c94 kernel: efi: MEMATTR=0x27eb25a98 INITRD=0x27de5a998 RNG=0x27de5f018 MEMRESERVE=0x27de5aa18 
+Dec 23 06:00:44 babcac139c94 kernel: OF: reserved mem: 0x0000000080000000..0x000000008007ffff (512 KiB) nomap non-reusable mmode_resv0@80000000
+Dec 23 06:00:44 babcac139c94 kernel: cma: Reserved 32 MiB at 0x00000000fe000000 on node -1
+Dec 23 06:00:44 babcac139c94 kernel: NUMA: No NUMA configuration found
+Dec 23 06:00:44 babcac139c94 kernel: NUMA: Faking a node at [mem 0x0000000080000000-0x000000027fffffff]
+Dec 23 06:00:44 babcac139c94 kernel: NUMA: NODE_DATA [mem 0x27fbf7d00-0x27fbfcfff]
+Dec 23 06:00:44 babcac139c94 kernel: Zone ranges:
+Dec 23 06:00:44 babcac139c94 kernel:   DMA32    [mem 0x0000000080000000-0x00000000ffffffff]
+Dec 23 06:00:44 babcac139c94 kernel:   Normal   [mem 0x0000000100000000-0x000000027fffffff]
+Dec 23 06:00:44 babcac139c94 kernel: Movable zone start for each node
+Dec 23 06:00:44 babcac139c94 kernel: Early memory node ranges
+Dec 23 06:00:44 babcac139c94 kernel:   node   0: [mem 0x0000000080000000-0x000000008007ffff]
+Dec 23 06:00:44 babcac139c94 kernel:   node   0: [mem 0x0000000080080000-0x000000027fc16fff]
+Dec 23 06:00:44 babcac139c94 kernel:   node   0: [mem 0x000000027fc17000-0x000000027fffefff]
+Dec 23 06:00:44 babcac139c94 kernel:   node   0: [mem 0x000000027ffff000-0x000000027fffffff]
+Dec 23 06:00:44 babcac139c94 kernel: Initmem setup node 0 [mem 0x0000000080000000-0x000000027fffffff]
+Dec 23 06:00:44 babcac139c94 kernel: crashkernel: reserved 0x00000000ee000000 - 0x00000000fe000000 (256 MB)
+Dec 23 06:00:44 babcac139c94 kernel: SBI HSM extension detected
+Dec 23 06:00:44 babcac139c94 kernel: Falling back to deprecated "riscv,isa"
+Dec 23 06:00:44 babcac139c94 kernel: riscv: base ISA extensions acdfhim
+Dec 23 06:00:44 babcac139c94 kernel: riscv: ELF capabilities acdfim
+Dec 23 06:00:44 babcac139c94 kernel: percpu: cpu 0 has no node -1 or node-local memory
+Dec 23 06:00:44 babcac139c94 kernel: percpu: Embedded 31 pages/cpu s86248 r8192 d32536 u126976
+Dec 23 06:00:44 babcac139c94 kernel: pcpu-alloc: s86248 r8192 d32536 u126976 alloc=31*4096
+Dec 23 06:00:44 babcac139c94 kernel: pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 [0] 4 [0] 5 [0] 6 [0] 7 
+Dec 23 06:00:44 babcac139c94 kernel: Kernel command line: BOOT_IMAGE=/vmlinuz-6.6.0-72.0.0.76.oe2403sp1.riscv64 root=UUID=986606c1-37ef-4dae-b6d5-0355dbf40bad ro console=ttyS0 highres=off earlycon no4lvl systemd.default_timeout_start_sec=600 rootfstype=ext4 quiet net.ifnames=0 biosdevname=0 nmi_watchdog=1 rd.shell=0 selinux=0 crashkernel=256M reserve_kbox_mem=16M crash_kexec_post_notifiers panic=3 no-steal-time use-sched-idle-time
+Dec 23 06:00:44 babcac139c94 kernel: Unknown kernel command line parameters "no-steal-time use-sched-idle-time BOOT_IMAGE=/vmlinuz-6.6.0-72.0.0.76.oe2403sp1.riscv64 biosdevname=0 nmi_watchdog=1 reserve_kbox_mem=16M", will be passed to user space.
+Dec 23 06:00:44 babcac139c94 kernel: Dentry cache hash table entries: 1048576 (order: 11, 8388608 bytes, linear)
+Dec 23 06:00:44 babcac139c94 kernel: Inode-cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+Dec 23 06:00:44 babcac139c94 kernel: Fallback order for Node 0: 0 
+Dec 23 06:00:44 babcac139c94 kernel: Built 1 zonelists, mobility grouping on.  Total pages: 2064384
+Dec 23 06:00:44 babcac139c94 kernel: Policy zone: Normal
+Dec 23 06:00:44 babcac139c94 kernel: mem auto-init: stack:off, heap alloc:off, heap free:off
+Dec 23 06:00:44 babcac139c94 kernel: stackdepot: allocating hash table via alloc_large_system_hash
+Dec 23 06:00:44 babcac139c94 kernel: stackdepot hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+Dec 23 06:00:44 babcac139c94 kernel: software IO TLB: area num 8.
+Dec 23 06:00:44 babcac139c94 kernel: software IO TLB: mapped [mem 0x00000000ea000000-0x00000000ee000000] (64MB)
+Dec 23 06:00:44 babcac139c94 kernel: Virtual kernel memory layout:
+Dec 23 06:00:44 babcac139c94 kernel:       fixmap : 0xffffffc6fea00000 - 0xffffffc6ff000000   (6144 kB)
+Dec 23 06:00:44 babcac139c94 kernel:       pci io : 0xffffffc6ff000000 - 0xffffffc700000000   (  16 MB)
+Dec 23 06:00:44 babcac139c94 kernel:      vmemmap : 0xffffffc700000000 - 0xffffffc800000000   (4096 MB)
+Dec 23 06:00:44 babcac139c94 kernel:      vmalloc : 0xffffffc800000000 - 0xffffffd800000000   (  64 GB)
+Dec 23 06:00:44 babcac139c94 kernel:      modules : 0xffffffff0278d000 - 0xffffffff80000000   (2008 MB)
+Dec 23 06:00:44 babcac139c94 kernel:       lowmem : 0xffffffd800000000 - 0xffffffda00000000   (8192 MB)
+Dec 23 06:00:44 babcac139c94 kernel:       kernel : 0xffffffff80000000 - 0xffffffffffffffff   (2047 MB)
+Dec 23 06:00:44 babcac139c94 kernel: Memory: 7798512K/8388608K available (15373K kernel code, 5860K rwdata, 14047K rodata, 702K init, 4505K bss, 557328K reserved, 32768K cma-reserved)
+Dec 23 06:00:44 babcac139c94 kernel: SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=8, Nodes=1
+Dec 23 06:00:44 babcac139c94 kernel: trace event string verifier disabled
+Dec 23 06:00:44 babcac139c94 kernel: rcu: Preemptible hierarchical RCU implementation.
+Dec 23 06:00:44 babcac139c94 kernel: rcu:         RCU restricting CPUs from NR_CPUS=512 to nr_cpu_ids=8.
+Dec 23 06:00:44 babcac139c94 kernel:         Trampoline variant of Tasks RCU enabled.
+Dec 23 06:00:44 babcac139c94 kernel:         Tracing variant of Tasks RCU enabled.
+Dec 23 06:00:44 babcac139c94 kernel: rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+Dec 23 06:00:44 babcac139c94 kernel: rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=8
+Dec 23 06:00:44 babcac139c94 kernel: NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+Dec 23 06:00:44 babcac139c94 kernel: riscv-intc: 64 local interrupts mapped
+Dec 23 06:00:44 babcac139c94 kernel: plic: plic@c000000: mapped 95 interrupts with 8 handlers for 16 contexts.
+Dec 23 06:00:44 babcac139c94 kernel: riscv: providing IPIs using SBI IPI extension
+Dec 23 06:00:44 babcac139c94 kernel: rcu: srcu_init: Setting srcu_struct sizes based on contention.
+Dec 23 06:00:44 babcac139c94 kernel: clocksource: riscv_clocksource: mask: 0xffffffffffffffff max_cycles: 0x24e6a1710, max_idle_ns: 440795202120 ns
+Dec 23 06:00:44 babcac139c94 kernel: sched_clock: 64 bits at 10MHz, resolution 100ns, wraps every 4398046511100ns
+Dec 23 06:00:44 babcac139c94 kernel: riscv-timer: Timer interrupt in S-mode is available via sstc extension
+Dec 23 06:00:44 babcac139c94 kernel: Console: colour dummy device 80x25
+Dec 23 06:00:44 babcac139c94 kernel: Calibrating delay loop (skipped), value calculated using timer frequency.. 20.00 BogoMIPS (lpj=40000)
+Dec 23 06:00:44 babcac139c94 kernel: pid_max: default: 32768 minimum: 301
+Dec 23 06:00:44 babcac139c94 kernel: LSM: initializing lsm=lockdown,capability,yama,apparmor,integrity
+Dec 23 06:00:44 babcac139c94 kernel: Yama: becoming mindful.
+Dec 23 06:00:44 babcac139c94 kernel: AppArmor: AppArmor initialized
+Dec 23 06:00:44 babcac139c94 kernel: Mount-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+Dec 23 06:00:44 babcac139c94 kernel: Mountpoint-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+Dec 23 06:00:44 babcac139c94 kernel: RCU Tasks: Setting shift to 3 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=8.
+Dec 23 06:00:44 babcac139c94 kernel: RCU Tasks Trace: Setting shift to 3 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=8.
+Dec 23 06:00:44 babcac139c94 kernel: riscv: ELF compat mode supported
+Dec 23 06:00:44 babcac139c94 kernel: ASID allocator using 16 bits (65536 entries)
+Dec 23 06:00:44 babcac139c94 kernel: rcu: Hierarchical SRCU implementation.
+Dec 23 06:00:44 babcac139c94 kernel: rcu:         Max phase no-delay instances is 1000.
+Dec 23 06:00:44 babcac139c94 kernel: Remapping and enabling EFI services.
+Dec 23 06:00:44 babcac139c94 kernel: smp: Bringing up secondary CPUs ...
+Dec 23 06:00:44 babcac139c94 kernel: cpu1: Ratio of byte access time to unaligned word access is 8.13, unaligned accesses are fast
+Dec 23 06:00:44 babcac139c94 kernel: cpu2: Ratio of byte access time to unaligned word access is 7.75, unaligned accesses are fast
+Dec 23 06:00:44 babcac139c94 kernel: cpu3: Ratio of byte access time to unaligned word access is 7.71, unaligned accesses are fast
+Dec 23 06:00:44 babcac139c94 kernel: cpu4: Ratio of byte access time to unaligned word access is 7.82, unaligned accesses are fast
+Dec 23 06:00:44 babcac139c94 kernel: cpu5: Ratio of byte access time to unaligned word access is 7.80, unaligned accesses are fast
+Dec 23 06:00:44 babcac139c94 kernel: cpu6: Ratio of byte access time to unaligned word access is 7.90, unaligned accesses are fast
+Dec 23 06:00:44 babcac139c94 kernel: cpu7: Ratio of byte access time to unaligned word access is 7.71, unaligned accesses are fast
+Dec 23 06:00:44 babcac139c94 kernel: smp: Brought up 1 node, 8 CPUs
+Dec 23 06:00:44 babcac139c94 kernel: devtmpfs: initialized
+Dec 23 06:00:44 babcac139c94 kernel: clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+Dec 23 06:00:44 babcac139c94 kernel: futex hash table entries: 2048 (order: 5, 131072 bytes, linear)
+Dec 23 06:00:44 babcac139c94 kernel: pinctrl core: initialized pinctrl subsystem
+Dec 23 06:00:44 babcac139c94 kernel: NET: Registered PF_NETLINK/PF_ROUTE protocol family
+Dec 23 06:00:44 babcac139c94 kernel: DMA: preallocated 1024 KiB GFP_KERNEL pool for atomic allocations
+Dec 23 06:00:44 babcac139c94 kernel: DMA: preallocated 1024 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+Dec 23 06:00:44 babcac139c94 kernel: audit: initializing netlink subsys (disabled)
+Dec 23 06:00:44 babcac139c94 kernel: audit: type=2000 audit(0.332:1): state=initialized audit_enabled=0 res=1
+Dec 23 06:00:44 babcac139c94 kernel: thermal_sys: Registered thermal governor 'fair_share'
+Dec 23 06:00:44 babcac139c94 kernel: thermal_sys: Registered thermal governor 'step_wise'
+Dec 23 06:00:44 babcac139c94 kernel: thermal_sys: Registered thermal governor 'user_space'
+Dec 23 06:00:44 babcac139c94 kernel: thermal_sys: Registered thermal governor 'power_allocator'
+Dec 23 06:00:44 babcac139c94 kernel: cpuidle: using governor menu
+Dec 23 06:00:44 babcac139c94 kernel: cpu0: Ratio of byte access time to unaligned word access is 7.82, unaligned accesses are fast
+Dec 23 06:00:44 babcac139c94 kernel: HugeTLB: registered 1.00 GiB page size, pre-allocated 0 pages
+Dec 23 06:00:44 babcac139c94 kernel: HugeTLB: 16380 KiB vmemmap can be freed for a 1.00 GiB page
+Dec 23 06:00:44 babcac139c94 kernel: HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+Dec 23 06:00:44 babcac139c94 kernel: HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+Dec 23 06:00:44 babcac139c94 kernel: ACPI: Interpreter disabled.
+Dec 23 06:00:44 babcac139c94 kernel: iommu: Default domain type: Translated
+Dec 23 06:00:44 babcac139c94 kernel: iommu: DMA domain TLB invalidation policy: lazy mode
+Dec 23 06:00:44 babcac139c94 kernel: SCSI subsystem initialized
+Dec 23 06:00:44 babcac139c94 kernel: libata version 3.00 loaded.
+Dec 23 06:00:44 babcac139c94 kernel: usbcore: registered new interface driver usbfs
+Dec 23 06:00:44 babcac139c94 kernel: usbcore: registered new interface driver hub
+Dec 23 06:00:44 babcac139c94 kernel: usbcore: registered new device driver usb
+Dec 23 06:00:44 babcac139c94 kernel: mc: Linux media interface: v0.10
+Dec 23 06:00:44 babcac139c94 kernel: pps_core: LinuxPPS API ver. 1 registered
+Dec 23 06:00:44 babcac139c94 kernel: pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+Dec 23 06:00:44 babcac139c94 kernel: EDAC MC: Ver: 3.0.0
+Dec 23 06:00:44 babcac139c94 kernel: efivars: Registered efivars operations
+Dec 23 06:00:44 babcac139c94 kernel: Advanced Linux Sound Architecture Driver Initialized.
+Dec 23 06:00:44 babcac139c94 kernel: Bluetooth: Core ver 2.22
+Dec 23 06:00:44 babcac139c94 kernel: NET: Registered PF_BLUETOOTH protocol family
+Dec 23 06:00:44 babcac139c94 kernel: Bluetooth: HCI device and connection manager initialized
+Dec 23 06:00:44 babcac139c94 kernel: Bluetooth: HCI socket layer initialized
+Dec 23 06:00:44 babcac139c94 kernel: Bluetooth: L2CAP socket layer initialized
+Dec 23 06:00:44 babcac139c94 kernel: Bluetooth: SCO socket layer initialized
+Dec 23 06:00:44 babcac139c94 kernel: NetLabel: Initializing
+Dec 23 06:00:44 babcac139c94 kernel: NetLabel:  domain hash size = 128
+Dec 23 06:00:44 babcac139c94 kernel: NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+Dec 23 06:00:44 babcac139c94 kernel: NetLabel:  unlabeled traffic allowed by default
+Dec 23 06:00:44 babcac139c94 kernel: vgaarb: loaded
+Dec 23 06:00:44 babcac139c94 kernel: clocksource: Switched to clocksource riscv_clocksource
+Dec 23 06:00:44 babcac139c94 kernel: VFS: Disk quotas dquot_6.6.0
+Dec 23 06:00:44 babcac139c94 kernel: VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+Dec 23 06:00:44 babcac139c94 kernel: AppArmor: AppArmor Filesystem Enabled
+Dec 23 06:00:44 babcac139c94 kernel: pnp: PnP ACPI: disabled
+Dec 23 06:00:44 babcac139c94 kernel: NET: Registered PF_INET protocol family
+Dec 23 06:00:44 babcac139c94 kernel: IP idents hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+Dec 23 06:00:44 babcac139c94 kernel: tcp_listen_portaddr_hash hash table entries: 4096 (order: 4, 65536 bytes, linear)
+Dec 23 06:00:44 babcac139c94 kernel: Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+Dec 23 06:00:44 babcac139c94 kernel: TCP established hash table entries: 65536 (order: 7, 524288 bytes, linear)
+Dec 23 06:00:44 babcac139c94 kernel: TCP bind hash table entries: 65536 (order: 9, 2097152 bytes, linear)
+Dec 23 06:00:44 babcac139c94 kernel: TCP: Hash tables configured (established 65536 bind 65536)
+Dec 23 06:00:44 babcac139c94 kernel: UDP hash table entries: 4096 (order: 5, 131072 bytes, linear)
+Dec 23 06:00:44 babcac139c94 kernel: UDP-Lite hash table entries: 4096 (order: 5, 131072 bytes, linear)
+Dec 23 06:00:44 babcac139c94 kernel: NET: Registered PF_UNIX/PF_LOCAL protocol family
+Dec 23 06:00:44 babcac139c94 kernel: RPC: Registered named UNIX socket transport module.
+Dec 23 06:00:44 babcac139c94 kernel: RPC: Registered udp transport module.
+Dec 23 06:00:44 babcac139c94 kernel: RPC: Registered tcp transport module.
+Dec 23 06:00:44 babcac139c94 kernel: RPC: Registered tcp-with-tls transport module.
+Dec 23 06:00:44 babcac139c94 kernel: RPC: Registered tcp NFSv4.1 backchannel transport module.
+Dec 23 06:00:44 babcac139c94 kernel: PCI: CLS 0 bytes, default 64
+Dec 23 06:00:44 babcac139c94 kernel: kvm [1]: hypervisor extension available
+Dec 23 06:00:44 babcac139c94 kernel: kvm [1]: using Sv57x4 G-stage page table format
+Dec 23 06:00:44 babcac139c94 kernel: kvm [1]: VMID 14 bits available
+Dec 23 06:00:44 babcac139c94 kernel: Trying to unpack rootfs image as initramfs...
+Dec 23 06:00:44 babcac139c94 kernel: Initialise system trusted keyrings
+Dec 23 06:00:44 babcac139c94 kernel: Key type blacklist registered
+Dec 23 06:00:44 babcac139c94 kernel: workingset: timestamp_bits=39 max_order=21 bucket_order=0
+Dec 23 06:00:44 babcac139c94 kernel: zbud: loaded
+Dec 23 06:00:44 babcac139c94 kernel: NFS: Registering the id_resolver key type
+Dec 23 06:00:44 babcac139c94 kernel: Key type id_resolver registered
+Dec 23 06:00:44 babcac139c94 kernel: Key type id_legacy registered
+Dec 23 06:00:44 babcac139c94 kernel: nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+Dec 23 06:00:44 babcac139c94 kernel: jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+Dec 23 06:00:44 babcac139c94 kernel: fuse: init (API version 7.39)
+Dec 23 06:00:44 babcac139c94 kernel: 9p: Installing v9fs 9p2000 file system support
+Dec 23 06:00:44 babcac139c94 kernel: integrity: Platform Keyring initialized
+Dec 23 06:00:44 babcac139c94 kernel: NET: Registered PF_ALG protocol family
+Dec 23 06:00:44 babcac139c94 kernel: Key type asymmetric registered
+Dec 23 06:00:44 babcac139c94 kernel: Asymmetric key parser 'x509' registered
+Dec 23 06:00:44 babcac139c94 kernel: Block layer SCSI generic (bsg) driver version 0.4 loaded (major 243)
+Dec 23 06:00:44 babcac139c94 kernel: io scheduler mq-deadline registered
+Dec 23 06:00:44 babcac139c94 kernel: io scheduler kyber registered
+Dec 23 06:00:44 babcac139c94 kernel: io scheduler bfq registered
+Dec 23 06:00:44 babcac139c94 kernel: shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+Dec 23 06:00:44 babcac139c94 kernel: pci-host-generic 30000000.pci: host bridge /soc/pci@30000000 ranges:
+Dec 23 06:00:44 babcac139c94 kernel: pci-host-generic 30000000.pci:       IO 0x0003000000..0x000300ffff -> 0x0000000000
+Dec 23 06:00:44 babcac139c94 kernel: pci-host-generic 30000000.pci:      MEM 0x0040000000..0x007fffffff -> 0x0040000000
+Dec 23 06:00:44 babcac139c94 kernel: pci-host-generic 30000000.pci:      MEM 0x0400000000..0x07ffffffff -> 0x0400000000
+Dec 23 06:00:44 babcac139c94 kernel: pci-host-generic 30000000.pci: Memory resource size exceeds max for 32 bits
+Dec 23 06:00:44 babcac139c94 kernel: pci-host-generic 30000000.pci: ECAM at [mem 0x30000000-0x3fffffff] for [bus 00-ff]
+Dec 23 06:00:44 babcac139c94 kernel: pci-host-generic 30000000.pci: PCI host bridge to bus 0000:00
+Dec 23 06:00:44 babcac139c94 kernel: pci_bus 0000:00: root bus resource [bus 00-ff]
+Dec 23 06:00:44 babcac139c94 kernel: pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+Dec 23 06:00:44 babcac139c94 kernel: pci_bus 0000:00: root bus resource [mem 0x40000000-0x7fffffff]
+Dec 23 06:00:44 babcac139c94 kernel: pci_bus 0000:00: root bus resource [mem 0x400000000-0x7ffffffff]
+Dec 23 06:00:44 babcac139c94 kernel: pci 0000:00:00.0: [1b36:0008] type 00 class 0x060000
+Dec 23 06:00:44 babcac139c94 kernel: pci 0000:00:01.0: [1af4:1050] type 00 class 0x030000
+Dec 23 06:00:44 babcac139c94 kernel: pci 0000:00:01.0: reg 0x10: [mem 0x40000000-0x407fffff pref]
+Dec 23 06:00:44 babcac139c94 kernel: pci 0000:00:01.0: reg 0x18: [mem 0x40810000-0x40813fff 64bit pref]
+Dec 23 06:00:44 babcac139c94 kernel: pci 0000:00:01.0: reg 0x20: [mem 0x40814000-0x40814fff]
+Dec 23 06:00:44 babcac139c94 kernel: pci 0000:00:01.0: reg 0x30: [mem 0xffff0000-0xffffffff pref]
+Dec 23 06:00:44 babcac139c94 kernel: pci 0000:00:01.0: vgaarb: setting as boot VGA device
+Dec 23 06:00:44 babcac139c94 kernel: pci 0000:00:01.0: vgaarb: bridge control possible
+Dec 23 06:00:44 babcac139c94 kernel: pci 0000:00:01.0: vgaarb: VGA device added: decodes=io+mem,owns=none,locks=none
+Dec 23 06:00:44 babcac139c94 kernel: pci 0000:00:02.0: [1b36:000d] type 00 class 0x0c0330
+Dec 23 06:00:44 babcac139c94 kernel: pci 0000:00:02.0: reg 0x10: [mem 0x400000000-0x400003fff 64bit]
+Dec 23 06:00:44 babcac139c94 kernel: pci 0000:00:01.0: BAR 0: assigned [mem 0x40000000-0x407fffff pref]
+Dec 23 06:00:44 babcac139c94 kernel: pci 0000:00:01.0: BAR 6: assigned [mem 0x40800000-0x4080ffff pref]
+Dec 23 06:00:44 babcac139c94 kernel: pci 0000:00:01.0: BAR 2: assigned [mem 0x400000000-0x400003fff 64bit pref]
+Dec 23 06:00:44 babcac139c94 kernel: pci 0000:00:02.0: BAR 0: assigned [mem 0x400004000-0x400007fff 64bit]
+Dec 23 06:00:44 babcac139c94 kernel: pci 0000:00:01.0: BAR 4: assigned [mem 0x40810000-0x40810fff]
+Dec 23 06:00:44 babcac139c94 kernel: pci 0000:00:02.0: enabling device (0000 -> 0002)
+Dec 23 06:00:44 babcac139c94 kernel: virtio-pci 0000:00:01.0: enabling device (0000 -> 0002)
+Dec 23 06:00:44 babcac139c94 kernel: Serial: 8250/16550 driver, 6 ports, IRQ sharing enabled
+Dec 23 06:00:44 babcac139c94 kernel: printk: console [ttyS0] disabled
+Dec 23 06:00:44 babcac139c94 kernel: 10000000.serial: ttyS0 at MMIO 0x10000000 (irq = 13, base_baud = 230400) is a 16550A
+Dec 23 06:00:44 babcac139c94 kernel: printk: console [ttyS0] enabled
+Dec 23 06:00:44 babcac139c94 kernel: printk: bootconsole [ns16550a0] disabled
+Dec 23 06:00:44 babcac139c94 kernel: SuperH (H)SCI(F) driver initialized
+Dec 23 06:00:44 babcac139c94 kernel: loop: module loaded
+Dec 23 06:00:44 babcac139c94 kernel: virtio_blk virtio1: 1/0/0 default/read/poll queues
+Dec 23 06:00:44 babcac139c94 kernel: virtio_blk virtio1: [vda] 83886080 512-byte logical blocks (42.9 GB/40.0 GiB)
+Dec 23 06:00:44 babcac139c94 kernel:  vda: vda1 vda2
+Dec 23 06:00:44 babcac139c94 kernel: rdac: device handler registered
+Dec 23 06:00:44 babcac139c94 kernel: hp_sw: device handler registered
+Dec 23 06:00:44 babcac139c94 kernel: emc: device handler registered
+Dec 23 06:00:44 babcac139c94 kernel: alua: device handler registered
+Dec 23 06:00:44 babcac139c94 kernel: e1000e: Intel(R) PRO/1000 Network Driver
+Dec 23 06:00:44 babcac139c94 kernel: e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+Dec 23 06:00:44 babcac139c94 kernel: xhci_hcd 0000:00:02.0: xHCI Host Controller
+Dec 23 06:00:44 babcac139c94 kernel: xhci_hcd 0000:00:02.0: new USB bus registered, assigned bus number 1
+Dec 23 06:00:44 babcac139c94 kernel: xhci_hcd 0000:00:02.0: hcc params 0x00087001 hci version 0x100 quirks 0x0000000000000010
+Dec 23 06:00:44 babcac139c94 kernel: xhci_hcd 0000:00:02.0: xHCI Host Controller
+Dec 23 06:00:44 babcac139c94 kernel: xhci_hcd 0000:00:02.0: new USB bus registered, assigned bus number 2
+Dec 23 06:00:44 babcac139c94 kernel: xhci_hcd 0000:00:02.0: Host supports USB 3.0 SuperSpeed
+Dec 23 06:00:44 babcac139c94 kernel: usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.06
+Dec 23 06:00:44 babcac139c94 kernel: usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Dec 23 06:00:44 babcac139c94 kernel: usb usb1: Product: xHCI Host Controller
+Dec 23 06:00:44 babcac139c94 kernel: usb usb1: Manufacturer: Linux 6.6.0-72.0.0.76.oe2403sp1.riscv64 xhci-hcd
+Dec 23 06:00:44 babcac139c94 kernel: usb usb1: SerialNumber: 0000:00:02.0
+Dec 23 06:00:44 babcac139c94 kernel: hub 1-0:1.0: USB hub found
+Dec 23 06:00:44 babcac139c94 kernel: hub 1-0:1.0: 4 ports detected
+Dec 23 06:00:44 babcac139c94 kernel: usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+Dec 23 06:00:44 babcac139c94 kernel: usb usb2: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 6.06
+Dec 23 06:00:44 babcac139c94 kernel: usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Dec 23 06:00:44 babcac139c94 kernel: usb usb2: Product: xHCI Host Controller
+Dec 23 06:00:44 babcac139c94 kernel: usb usb2: Manufacturer: Linux 6.6.0-72.0.0.76.oe2403sp1.riscv64 xhci-hcd
+Dec 23 06:00:44 babcac139c94 kernel: usb usb2: SerialNumber: 0000:00:02.0
+Dec 23 06:00:44 babcac139c94 kernel: hub 2-0:1.0: USB hub found
+Dec 23 06:00:44 babcac139c94 kernel: hub 2-0:1.0: 4 ports detected
+Dec 23 06:00:44 babcac139c94 kernel: usbcore: registered new interface driver uas
+Dec 23 06:00:44 babcac139c94 kernel: usbcore: registered new interface driver usb-storage
+Dec 23 06:00:44 babcac139c94 kernel: usbcore: registered new interface driver ums-sddr09
+Dec 23 06:00:44 babcac139c94 kernel: usbcore: registered new interface driver ums-sddr55
+Dec 23 06:00:44 babcac139c94 kernel: mousedev: PS/2 mouse device common for all mice
+Dec 23 06:00:44 babcac139c94 kernel: rtc-efi rtc-efi.0: registered as rtc0
+Dec 23 06:00:44 babcac139c94 kernel: rtc-efi rtc-efi.0: setting system clock to 2024-12-22T21:57:48 UTC (1734904668)
+Dec 23 06:00:44 babcac139c94 kernel: goldfish_rtc 101000.rtc: registered as rtc1
+Dec 23 06:00:44 babcac139c94 kernel: i2c_dev: i2c /dev entries driver
+Dec 23 06:00:44 babcac139c94 kernel: syscon-poweroff poweroff: pm_power_off already claimed for sbi_srst_power_off
+Dec 23 06:00:44 babcac139c94 kernel: syscon-poweroff: probe of poweroff failed with error -16
+Dec 23 06:00:44 babcac139c94 kernel: Watchdog module: th1520-wdt loaded
+Dec 23 06:00:44 babcac139c94 kernel: device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+Dec 23 06:00:44 babcac139c94 kernel: device-mapper: uevent: version 1.0.3
+Dec 23 06:00:44 babcac139c94 kernel: device-mapper: ioctl: 4.48.0-ioctl (2023-03-01) initialised: dm-devel@redhat.com
+Dec 23 06:00:44 babcac139c94 kernel: Bluetooth: HCI UART driver ver 2.3
+Dec 23 06:00:44 babcac139c94 kernel: Bluetooth: HCI UART protocol H4 registered
+Dec 23 06:00:44 babcac139c94 kernel: sdhci: Secure Digital Host Controller Interface driver
+Dec 23 06:00:44 babcac139c94 kernel: sdhci: Copyright(c) Pierre Ossman
+Dec 23 06:00:44 babcac139c94 kernel: sdhci-pltfm: SDHCI platform and OF driver helper
+Dec 23 06:00:44 babcac139c94 kernel: hid: raw HID events driver (C) Jiri Kosina
+Dec 23 06:00:44 babcac139c94 kernel: usbcore: registered new interface driver usbhid
+Dec 23 06:00:44 babcac139c94 kernel: usbhid: USB HID core driver
+Dec 23 06:00:44 babcac139c94 kernel: riscv-pmu-sbi: SBI PMU extension is available
+Dec 23 06:00:44 babcac139c94 kernel: riscv-pmu-sbi: 16 firmware and 18 hardware counters
+Dec 23 06:00:44 babcac139c94 kernel: riscv-pmu-sbi: Perf sampling/filtering is not supported as sscof extension is not available
+Dec 23 06:00:44 babcac139c94 kernel: Freeing initrd memory: 34988K
+Dec 23 06:00:44 babcac139c94 kernel: NET: Registered PF_INET6 protocol family
+Dec 23 06:00:44 babcac139c94 kernel: Segment Routing with IPv6
+Dec 23 06:00:44 babcac139c94 kernel: In-situ OAM (IOAM) with IPv6
+Dec 23 06:00:44 babcac139c94 kernel: NET: Registered PF_PACKET protocol family
+Dec 23 06:00:44 babcac139c94 kernel: bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+Dec 23 06:00:44 babcac139c94 kernel: Bluetooth: RFCOMM TTY layer initialized
+Dec 23 06:00:44 babcac139c94 kernel: Bluetooth: RFCOMM socket layer initialized
+Dec 23 06:00:44 babcac139c94 kernel: Bluetooth: RFCOMM ver 1.11
+Dec 23 06:00:44 babcac139c94 kernel: Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+Dec 23 06:00:44 babcac139c94 kernel: Bluetooth: BNEP socket layer initialized
+Dec 23 06:00:44 babcac139c94 kernel: Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+Dec 23 06:00:44 babcac139c94 kernel: Bluetooth: HIDP socket layer initialized
+Dec 23 06:00:44 babcac139c94 kernel: 9pnet: Installing 9P2000 support
+Dec 23 06:00:44 babcac139c94 kernel: Key type dns_resolver registered
+Dec 23 06:00:44 babcac139c94 kernel: registered taskstats version 1
+Dec 23 06:00:44 babcac139c94 kernel: Loading compiled-in X.509 certificates
+Dec 23 06:00:44 babcac139c94 kernel: usb 1-1: new high-speed USB device number 2 using xhci_hcd
+Dec 23 06:00:44 babcac139c94 kernel: Loaded X.509 cert 'Build time autogenerated kernel key: 4b47260cb61f07ebf21298b7cc83464bd55d6415'
+Dec 23 06:00:44 babcac139c94 kernel: kmemleak: Kernel memory leak detector initialized (mem pool available: 15566)
+Dec 23 06:00:44 babcac139c94 kernel: kmemleak: Automatic memory scanning thread started
+Dec 23 06:00:44 babcac139c94 kernel: usb 1-1: New USB device found, idVendor=0627, idProduct=0001, bcdDevice= 0.00
+Dec 23 06:00:44 babcac139c94 kernel: usb 1-1: New USB device strings: Mfr=1, Product=4, SerialNumber=11
+Dec 23 06:00:44 babcac139c94 kernel: usb 1-1: Product: QEMU USB Keyboard
+Dec 23 06:00:44 babcac139c94 kernel: usb 1-1: Manufacturer: QEMU
+Dec 23 06:00:44 babcac139c94 kernel: usb 1-1: SerialNumber: 68284-0000:00:02.0-1
+Dec 23 06:00:44 babcac139c94 kernel: input: QEMU QEMU USB Keyboard as /devices/platform/soc/30000000.pci/pci0000:00/0000:00:02.0/usb1/1-1/1-1:1.0/0003:0627:0001.0001/input/input0
+Dec 23 06:00:44 babcac139c94 kernel: hid-generic 0003:0627:0001.0001: input,hidraw0: USB HID v1.11 Keyboard [QEMU QEMU USB Keyboard] on usb-0000:00:02.0-1/input0
+Dec 23 06:00:44 babcac139c94 kernel: Key type encrypted registered
+Dec 23 06:00:44 babcac139c94 kernel: AppArmor: AppArmor sha1 policy hashing enabled
+Dec 23 06:00:44 babcac139c94 kernel: ima: IMA RoT initializing tpm
+Dec 23 06:00:44 babcac139c94 kernel: ima: No RoT found, activating RoT-bypass!
+Dec 23 06:00:44 babcac139c94 kernel: ima: Allocated hash algorithm: sha256
+Dec 23 06:00:44 babcac139c94 kernel: ima: No architecture policies found
+Dec 23 06:00:44 babcac139c94 kernel: evm: Initialising EVM extended attributes:
+Dec 23 06:00:44 babcac139c94 kernel: evm: security.selinux
+Dec 23 06:00:44 babcac139c94 kernel: evm: security.SMACK64 (disabled)
+Dec 23 06:00:44 babcac139c94 kernel: evm: security.SMACK64EXEC (disabled)
+Dec 23 06:00:44 babcac139c94 kernel: evm: security.SMACK64TRANSMUTE (disabled)
+Dec 23 06:00:44 babcac139c94 kernel: evm: security.SMACK64MMAP (disabled)
+Dec 23 06:00:44 babcac139c94 kernel: evm: security.apparmor
+Dec 23 06:00:44 babcac139c94 kernel: evm: security.ima
+Dec 23 06:00:44 babcac139c94 kernel: evm: security.capability
+Dec 23 06:00:44 babcac139c94 kernel: evm: HMAC attrs: 0x1
+Dec 23 06:00:44 babcac139c94 kernel: usb 1-2: new high-speed USB device number 3 using xhci_hcd
+Dec 23 06:00:44 babcac139c94 kernel: usb 1-2: New USB device found, idVendor=0627, idProduct=0001, bcdDevice= 0.00
+Dec 23 06:00:44 babcac139c94 kernel: usb 1-2: New USB device strings: Mfr=1, Product=3, SerialNumber=10
+Dec 23 06:00:44 babcac139c94 kernel: usb 1-2: Product: QEMU USB Tablet
+Dec 23 06:00:44 babcac139c94 kernel: usb 1-2: Manufacturer: QEMU
+Dec 23 06:00:44 babcac139c94 kernel: usb 1-2: SerialNumber: 28754-0000:00:02.0-2
+Dec 23 06:00:44 babcac139c94 kernel: input: QEMU QEMU USB Tablet as /devices/platform/soc/30000000.pci/pci0000:00/0000:00:02.0/usb1/1-2/1-2:1.0/0003:0627:0001.0002/input/input1
+Dec 23 06:00:44 babcac139c94 kernel: hid-generic 0003:0627:0001.0002: input,hidraw1: USB HID v0.01 Mouse [QEMU QEMU USB Tablet] on usb-0000:00:02.0-2/input0
+Dec 23 06:00:44 babcac139c94 kernel: th1520 rpmsg: driver is registered.
+Dec 23 06:00:44 babcac139c94 kernel: cfg80211: Loading compiled-in X.509 certificates for regulatory database
+Dec 23 06:00:44 babcac139c94 kernel: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+Dec 23 06:00:44 babcac139c94 kernel: Loaded X.509 cert 'wens: 61c038651aabdcf94bd0ac7ff06c7248db18c600'
+Dec 23 06:00:44 babcac139c94 kernel: platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+Dec 23 06:00:44 babcac139c94 kernel: cfg80211: failed to load regulatory.db
+Dec 23 06:00:44 babcac139c94 kernel: clk: Disabling unused clocks
+Dec 23 06:00:44 babcac139c94 kernel: ALSA device list:
+Dec 23 06:00:44 babcac139c94 kernel:   No soundcards found.
+Dec 23 06:00:44 babcac139c94 kernel: integrity: Unable to open file: /etc/keys/x509_ima.der (-2)
+Dec 23 06:00:44 babcac139c94 kernel: integrity: Unable to open file: /etc/keys/x509_evm.der (-2)
+Dec 23 06:00:44 babcac139c94 kernel: Freeing unused kernel image (initmem) memory: 696K
+Dec 23 06:00:44 babcac139c94 kernel: Kernel memory protection not selected by kernel config.
+Dec 23 06:00:44 babcac139c94 kernel: Run /init as init process
+Dec 23 06:00:44 babcac139c94 kernel:   with arguments:
+Dec 23 06:00:44 babcac139c94 kernel:     /init
+Dec 23 06:00:44 babcac139c94 kernel:     no-steal-time
+Dec 23 06:00:44 babcac139c94 kernel:     use-sched-idle-time
+Dec 23 06:00:44 babcac139c94 kernel:   with environment:
+Dec 23 06:00:44 babcac139c94 kernel:     HOME=/
+Dec 23 06:00:44 babcac139c94 kernel:     TERM=linux
+Dec 23 06:00:44 babcac139c94 kernel:     BOOT_IMAGE=/vmlinuz-6.6.0-72.0.0.76.oe2403sp1.riscv64
+Dec 23 06:00:44 babcac139c94 kernel:     biosdevname=0
+Dec 23 06:00:44 babcac139c94 kernel:     nmi_watchdog=1
+Dec 23 06:00:44 babcac139c94 kernel:     reserve_kbox_mem=16M
+Dec 23 06:00:44 babcac139c94 systemd[1]: systemd v255-34.oe2403sp1 running in system mode (+PAM +AUDIT +SELINUX -APPARMOR +IMA -SMACK +SECCOMP +GCRYPT +GNUTLS -OPENSSL +ACL +BLKID -CURL -ELFUTILS -FIDO2 +IDN2 -IDN -IPTC +KMOD +LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY +P11KIT -QRENCODE -TPM2 +BZIP2 +LZ4 +XZ +ZLIB -ZSTD -BPF_FRAMEWORK +XKBCOMMON +UTMP +SYSVINIT default-hierarchy=legacy)
+Dec 23 06:00:44 babcac139c94 systemd[1]: Detected architecture riscv64.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Running in initrd.
+Dec 23 06:00:44 babcac139c94 systemd[1]: No hostname configured, using default hostname.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Hostname set to <localhost>.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Initializing machine ID from random generator.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Queued start job for default target Initrd Default Target.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Reached target Initrd /usr File System.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Reached target Path Units.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Reached target Slice Units.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Reached target Swaps.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Reached target Timer Units.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Listening on Journal Socket (/dev/log).
+Dec 23 06:00:44 babcac139c94 systemd[1]: Listening on Journal Socket.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Listening on udev Control Socket.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Listening on udev Kernel Socket.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Reached target Socket Units.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Starting Create List of Static Device Nodes...
+Dec 23 06:00:44 babcac139c94 systemd[1]: systemd-journald.service: unit configures an IP firewall, but the local system does not support BPF/cgroup firewalling.
+Dec 23 06:00:44 babcac139c94 systemd[1]: systemd-journald.service: (This warning is only shown for the first unit using IP firewalling.)
+Dec 23 06:00:44 babcac139c94 systemd[1]: Starting Journal Service...
+Dec 23 06:00:44 babcac139c94 systemd[1]: Load Kernel Modules was skipped because no trigger condition checks were met.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Starting Apply Kernel Variables...
+Dec 23 06:00:44 babcac139c94 systemd[1]: Starting Create Static Device Nodes in /dev...
+Dec 23 06:00:44 babcac139c94 systemd[1]: Starting Virtual Console Setup...
+Dec 23 06:00:44 babcac139c94 systemd[1]: Finished Create List of Static Device Nodes.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Finished Create Static Device Nodes in /dev.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Reached target Preparation for Local File Systems.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Reached target Local File Systems.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Finished Apply Kernel Variables.
+Dec 23 06:00:44 babcac139c94 systemd-journald[251]: Collecting audit messages is disabled.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Started Journal Service.
+Dec 23 06:00:44 babcac139c94 kernel: [drm] pci: virtio-vga detected at 0000:00:01.0
+Dec 23 06:00:44 babcac139c94 kernel: virtio-pci 0000:00:01.0: vgaarb: deactivate vga console
+Dec 23 06:00:44 babcac139c94 kernel: [drm] features: -virgl +edid -resource_blob -host_visible
+Dec 23 06:00:44 babcac139c94 kernel: [drm] features: -context_init
+Dec 23 06:00:44 babcac139c94 kernel: [drm] number of scanouts: 1
+Dec 23 06:00:44 babcac139c94 kernel: [drm] number of cap sets: 0
+Dec 23 06:00:44 babcac139c94 kernel: [drm] Initialized virtio_gpu 0.1.0 0 for 0000:00:01.0 on minor 0
+Dec 23 06:00:44 babcac139c94 kernel: fbcon: Deferring console take-over
+Dec 23 06:00:44 babcac139c94 kernel: virtio-pci 0000:00:01.0: [drm] fb0: virtio_gpudrmfb frame buffer device
+Dec 23 06:00:44 babcac139c94 kernel: EXT4-fs (vda2): mounted filesystem 986606c1-37ef-4dae-b6d5-0355dbf40bad ro with ordered data mode. Quota mode: none.
+Dec 23 06:00:44 babcac139c94 systemd-journald[251]: Received SIGTERM from PID 1 (systemd).
+Dec 23 06:00:44 babcac139c94 systemd[1]: systemd v255-34.oe2403sp1 running in system mode (+PAM +AUDIT +SELINUX -APPARMOR +IMA -SMACK +SECCOMP +GCRYPT +GNUTLS -OPENSSL +ACL +BLKID -CURL -ELFUTILS -FIDO2 +IDN2 -IDN -IPTC +KMOD +LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY +P11KIT -QRENCODE -TPM2 +BZIP2 +LZ4 +XZ +ZLIB -ZSTD -BPF_FRAMEWORK +XKBCOMMON +UTMP +SYSVINIT default-hierarchy=legacy)
+Dec 23 06:00:44 babcac139c94 systemd[1]: Detected architecture riscv64.
+Dec 23 06:00:44 babcac139c94 systemd-rc-local-generator[433]: /etc/rc.d/rc.local is not marked executable, skipping.
+Dec 23 06:00:44 babcac139c94 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Dec 23 06:00:44 babcac139c94 systemd[1]: initrd-switch-root.service: Deactivated successfully.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Stopped Switch Root.
+Dec 23 06:00:44 babcac139c94 systemd[1]: systemd-journald.service: Scheduled restart job, restart counter is at 1.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Created slice Slice /system/getty.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Created slice Slice /system/serial-getty.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Created slice Slice /system/sshd-keygen.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Created slice User and Session Slice.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Set up automount Arbitrary Executable File Formats File System Automount Point.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Stopped target Switch Root.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Stopped target Initrd File Systems.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Stopped target Initrd Root File System.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Reached target Path Units.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Reached target Remote File Systems.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Reached target Slice Units.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Reached target Swaps.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Listening on Process Core Dump Socket.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Listening on initctl Compatibility Named Pipe.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Listening on udev Control Socket.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Listening on udev Kernel Socket.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Mounting Huge Pages File System...
+Dec 23 06:00:44 babcac139c94 systemd[1]: Mounting POSIX Message Queue File System...
+Dec 23 06:00:44 babcac139c94 systemd[1]: Mounting Kernel Debug File System...
+Dec 23 06:00:44 babcac139c94 systemd[1]: Mounting Kernel Trace File System...
+Dec 23 06:00:44 babcac139c94 systemd[1]: Mounting Temporary Directory /tmp...
+Dec 23 06:00:44 babcac139c94 systemd[1]: Starting Create List of Static Device Nodes...
+Dec 23 06:00:44 babcac139c94 systemd[1]: Starting Load Kernel Module configfs...
+Dec 23 06:00:44 babcac139c94 systemd[1]: Starting Load Kernel Module drm...
+Dec 23 06:00:44 babcac139c94 systemd[1]: Starting Load Kernel Module fuse...
+Dec 23 06:00:44 babcac139c94 systemd[1]: systemd-fsck-root.service: Deactivated successfully.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Stopped File System Check on Root Device.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Starting Journal Service...
+Dec 23 06:00:44 babcac139c94 systemd[1]: Load Kernel Modules was skipped because no trigger condition checks were met.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Starting Generate network units from Kernel command line...
+Dec 23 06:00:44 babcac139c94 systemd[1]: Starting Remount Root and Kernel File Systems...
+Dec 23 06:00:44 babcac139c94 systemd[1]: Starting Apply Kernel Variables...
+Dec 23 06:00:44 babcac139c94 systemd[1]: Starting Coldplug All udev Devices...
+Dec 23 06:00:44 babcac139c94 systemd[1]: Mounted Huge Pages File System.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Mounted POSIX Message Queue File System.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Mounted Kernel Debug File System.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Mounted Kernel Trace File System.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Mounted Temporary Directory /tmp.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Finished Create List of Static Device Nodes.
+Dec 23 06:00:44 babcac139c94 systemd[1]: modprobe@configfs.service: Deactivated successfully.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Finished Load Kernel Module configfs.
+Dec 23 06:00:44 babcac139c94 systemd[1]: modprobe@drm.service: Deactivated successfully.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Finished Load Kernel Module drm.
+Dec 23 06:00:44 babcac139c94 systemd[1]: modprobe@fuse.service: Deactivated successfully.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Finished Load Kernel Module fuse.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Finished Generate network units from Kernel command line.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Reached target Preparation for Network.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Mounting FUSE Control File System...
+Dec 23 06:00:44 babcac139c94 kernel: EXT4-fs (vda2): re-mounted 986606c1-37ef-4dae-b6d5-0355dbf40bad r/w. Quota mode: none.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Starting Create Static Device Nodes in /dev gracefully...
+Dec 23 06:00:44 babcac139c94 systemd[1]: Finished Remount Root and Kernel File Systems.
+Dec 23 06:00:44 babcac139c94 systemd-journald[454]: Collecting audit messages is disabled.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Rebuild Hardware Database was skipped because of an unmet condition check (ConditionNeedsUpdate=/etc).
+Dec 23 06:00:44 babcac139c94 systemd[1]: Starting Load/Save OS Random Seed...
+Dec 23 06:00:44 babcac139c94 systemd[1]: Mounted FUSE Control File System.
+Dec 23 06:00:44 babcac139c94 systemd[1]: Started Journal Service.
+Dec 23 06:00:44 babcac139c94 systemd-journald[454]: Received client request to flush runtime journal.
+Dec 23 06:00:44 babcac139c94 kernel: FAT-fs (vda1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+Dec 23 06:00:44 babcac139c94 kernel: fbcon: Taking over console
+Dec 23 06:00:44 babcac139c94 kernel: Console: switching to colour frame buffer device 160x50
+Dec 23 06:00:44 babcac139c94 kernel: platform th1520-wdt: deferred probe pending
+Dec 23 06:00:44 babcac139c94 kernel: Bridge firewalling registered
+Dec 23 06:00:44 babcac139c94 kernel: Initializing XFRM netlink socket
+Dec 23 06:00:44 babcac139c94 kernel: block vda: the capability attribute has been deprecated.
+Dec 23 06:00:44 babcac139c94 kernel: docker0: port 1(vethdfd24b4) entered blocking state
+Dec 23 06:00:44 babcac139c94 kernel: docker0: port 1(vethdfd24b4) entered disabled state
+Dec 23 06:00:44 babcac139c94 kernel: vethdfd24b4: entered allmulticast mode
+Dec 23 06:00:44 babcac139c94 kernel: vethdfd24b4: entered promiscuous mode
+Dec 23 06:00:44 babcac139c94 kernel: exe[3731]: memfd_create() called without MFD_EXEC or MFD_NOEXEC_SEAL set
+Dec 23 06:00:44 babcac139c94 kernel: eth0: renamed from vethb56c616
+Dec 23 06:00:44 babcac139c94 kernel: docker0: port 1(vethdfd24b4) entered blocking state
+Dec 23 06:00:44 babcac139c94 kernel: docker0: port 1(vethdfd24b4) entered forwarding state
+Dec 23 06:00:44 babcac139c94 systemd-rc-local-generator[12]: /etc/rc.d/rc.local is not marked executable, skipping.
+Dec 23 06:00:44 babcac139c94 systemd-journald[24]: Collecting audit messages is disabled.
+Dec 23 06:00:45 babcac139c94 systemd-journald[24]: Received client request to flush runtime journal.
+Dec 23 06:01:21 babcac139c94 kernel: capability: warning: `yum' uses 32-bit capabilities (legacy support in use)
+Dec 23 06:03:37 babcac139c94 systemd-rc-local-generator[283]: /etc/rc.d/rc.local is not marked executable, skipping.
++ CHECK_RESULT 0 0 0 'grep kernel|systemd failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='grep kernel|systemd failed'
++ exit_mode=0
++ '[' -z '0 0 0 grep kernel|systemd failed' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ journalctl -b --no-pager
++ CHECK_RESULT 0 0 0 'journalctl -b failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='journalctl -b failed'
++ exit_mode=0
++ '[' -z '0 0 0 journalctl -b failed' ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Mon Dec 23 06:09:34 2024 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Mon Dec 23 06:09:34 2024 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Mon Dec 23 06:09:35 2024 - INFO  - start environment cleanup.
++ rm -rf ./all_log ./boot_log ./kernel_log
++ LOG_INFO 'Finsh environment cleanup! '
++ message='Finsh environment cleanup! '
++ python3 /home/mugen/libs/locallibs/mugen_log.py --level info --message 'Finsh environment cleanup! '
+Mon Dec 23 06:09:35 2024 - INFO  - Finsh environment cleanup! 

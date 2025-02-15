@@ -1,0 +1,23 @@
+Python 3.11.6
+Sun Feb 16 01:45:53 2025 - INFO  - Start environment preparation.
+Sun Feb 16 01:46:27 2025 - INFO  - End of environmental preparation!
+Sun Feb 16 01:46:27 2025 - INFO  - Start testing...
+Device             tps    kB_read/s    kB_wrtn/s    kB_dscd/s    kB_read    kB_wrtn    kB_dscd
+Device             tps    kB_read/s    kB_wrtn/s    kB_dscd/s    kB_read    kB_wrtn    kB_dscd
+Device             tps    kB_read/s    kB_wrtn/s    kB_dscd/s    kB_read    kB_wrtn    kB_dscd
+Device             tps    kB_read/s    kB_wrtn/s    kB_dscd/s    kB_read    kB_wrtn    kB_dscd
+Device             tps    kB_read/s    kB_wrtn/s    kB_dscd/s    kB_read    kB_wrtn    kB_dscd
+Device             tps    kB_read/s    kB_wrtn/s    kB_dscd/s    kB_read    kB_wrtn    kB_dscd
+Device             tps    kB_read/s    kB_wrtn/s    kB_dscd/s    kB_read    kB_wrtn    kB_dscd
+Device             tps    kB_read/s    kB_wrtn/s    kB_dscd/s    kB_read    kB_wrtn    kB_dscd
+Device             tps    kB_read/s    kB_wrtn/s    kB_dscd/s    kB_read    kB_wrtn    kB_dscd
+Device             tps    kB_read/s    kB_wrtn/s    kB_dscd/s    kB_read    kB_wrtn    kB_dscd
+Sun Feb 16 01:46:38 2025 - ERROR - iostat 1 2 failed
+Sun Feb 16 01:46:38 2025 - ERROR - oe_test_sysstat_03.sh line 37
+Sun Feb 16 01:46:39 2025 - INFO  - Finish test!
+Sun Feb 16 01:46:39 2025 - ERROR - failed to execute the case.
+Sun Feb 16 01:46:40 2025 - INFO  - start environment cleanup.
+1000+0 records in
+1000+0 records out
+Sun Feb 16 01:46:53 2025 - INFO  - Finish environment cleanup!
+1048576000 bytes (1.0 GB, 1000 MiB) copied, 16.2889 s, 64.4 MB/s
